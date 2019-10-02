@@ -43,8 +43,8 @@ class SessionForm extends React.Component {
       })
     }
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="form_background">
+        <form className="form" onSubmit={this.handleSubmit}>
           <h1>{header}</h1>
           <label>Email
             <input type="text" value={this.state.email} onChange={this.update("email")} />
