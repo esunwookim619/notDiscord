@@ -36,7 +36,7 @@ export const SplashContainer = () => {
       <div className="container">
         <div className="wordcontainer">
           <p className="splashgreeting">It's time to ditch Discord and TeamSpeak.</p>
-          <p className="splashmini">No voice and only text chats for AppAcademy students that works only on full screen monitors of atleast 15".</p>
+          <p className="splashmini">No voice and only text chats for AppAcademy students that works only on full screen monitors of atleast 20".</p>
           <p className="splashmini2">Stop using Discord and complicate your life.</p>
           <div className="buttoncontainer">
           <button className="nodl">Cannot download</button>
