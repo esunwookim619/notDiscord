@@ -1,0 +1,221 @@
+nav {
+   display: flex;
+   justify-content: space-between;
+  }
+
+ .nav_right {
+  padding: 20px 30px 10px 10px;
+  margin-right: 10%;
+ } 
+
+ .login {
+   border: solid 2px lightgrey; 
+   border-radius: 20px;
+   width: 70px;
+   height: 28px;
+   position:relative;
+   z-index: 50;
+  
+ }
+
+ .login:hover {
+   border: solid 2px white; 
+ }
+
+ .login_write {
+   padding: 19px;
+   color: lightgrey;
+   position: relative;
+   top: 5px;
+   right: 3px;
+   text-decoration: none;
+   font-family: Optima, sans-serif;
+   font-size: 15px;	
+ }
+
+ .login_write:hover {
+   color: white;
+ }
+
+  .splash {
+   background: #26262b;
+   /* position: relative; */
+   height: 1600px;
+   z-index: -10;
+ }
+
+   .logout {
+   position: relative;
+   right: 200px;
+   bottom: 10px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+ } 
+
+
+
+  .electronics {
+  position: relative;
+  display: flex;
+  bottom: 210px;
+ }
+
+ .aic {
+   position: relative;
+   left: 400px;
+   top: 640px; 
+   z-index: 10;
+ }
+
+ .controller {
+   position: relative;
+   top: 75px;
+ }
+
+ .dlh {
+   position: relative;
+   top: 425px;
+   left: 210px;
+ }
+
+ .laptop {
+   position: relative;
+   top: 58px;
+   right: 295px;
+   z-index: 9;
+ }
+
+.headphones {
+  position: relative;
+  right: 605px;
+  bottom: 35px;
+  height: 200px;
+  z-index: 10;
+}
+
+.bomb {
+  position: relative;
+  left: 465px;
+  bottom: 200px;
+}
+
+.coin {
+  position: relative;
+  left: 335px;
+  bottom: 175px;
+}
+
+.mariobox {
+  position: relative;
+  left: 355px;
+  bottom: 330px;
+  z-index: 1;
+}
+
+
+
+.cartridge {
+  position: relative;
+  left: 1100px;
+  bottom: 255px;
+  z-index: 1;
+}
+
+.desktop {
+  position: relative;
+  z-index: 3;
+}
+
+
+
+.wordcontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.splashgreeting {
+  color: white;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  align-self: center;
+  margin-top: 5%;
+}
+
+.splashmini {
+  color: #737f8d;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  align-self: center;
+  padding-top: 20px;
+} 
+
+.splashmini2 {
+  color: #737f8d;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  align-self: center;
+  padding-top: 5px;
+}
+
+h3 {
+  color: white;
+}
+
+.nav_left {
+  padding-left: 150px;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 400px;
+}
+
+.circle {
+  position: relative;
+  z-index: 20;
+  bottom: 380px;
+  left: 140px;
+  -webkit-filter: brightness(50%);
+}
+
+.square1 {
+  position: relative;
+  z-index: 20;
+  -webkit-filter: brightness(50%);
+  left: 875px;
+  bottom: 280px;
+}
+
+.square2 {
+  position: relative;
+  z-index: 20;
+  -webkit-filter: brightness(50%);
+  left: 765px;
+  bottom: 450px;
+}
+
+/* @keyframes slidefromtop {
+    30% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+@keyframes slidefrombottom {
+    100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-100%);
+    }
+} */
+
+.coin2 {
+  position: relative;
+  left: 750px;
+  bottom: 410px;
+  /* animation: 200s ease 0s 1000 slidefromtop;
+  animation: 200s ease 0s 1000 slidefrombottom; */
+}
+ 

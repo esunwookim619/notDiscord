@@ -9,7 +9,8 @@ import Default from "./default";
 
 const App = () => (
   <>
-    <Default />
+
+    <Route path="/@me" component={Default} />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <Route exact path="/" component={SplashContainer} />

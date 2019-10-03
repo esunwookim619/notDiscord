@@ -14,129 +14,173 @@
  *= require_self
  */
 
-
-
- nav {
-   margin-top: 10px;
-   display: flex;
-   justify-content: space-between;
- }
-
- .nav_right {
-  padding: 10px 30px 10px 10px;
-  margin-right: 150px;
- }
-
- .login {
-   border: solid 2px lightgrey; 
-   border-radius: 20px;
-   width: 70px;
-   height: 28px;
- }
-
- .login:hover {
-   border: solid 2px white; 
- }
-
- .login_write {
-   padding: 19px;
-   color: lightgrey;
-   position: relative;
-   top: 5px;
-   right: 3px;
-   text-decoration: none;
-   font-family: Optima, sans-serif;
-   font-size: 15px;	
- }
-
- .login_write:hover {
-   color: white;
- }
-
- /* hard coded - put in container and position in that container using margins, etc.*/
- .electronics {
-   display: flex;
-   position: relative;
-   left: 370px;
-   top: 420px;
- }
-
-.aic {
-  position: relative;
-  top: 185px;
-}
-
-.dlh {
-  position: relative;
-  bottom: 30px;
-  right: 180px;
-  z-index: -1;
-}
-
-.controller {
-  position: relative;
-  top: 75px;
-}
-
-.laptop {
-  position: relative;
-  right: 300px;
-  top: 60px;
-}
-
-.headphones {
-  position: relative;
-  right: 600px;
-  bottom: 4px;
-}
-
-.mariobox {
-  position: relative;
-  left: 400px;
-  bottom: 155px;
-  z-index: -2;
-}
-
-.cartridge {
-  position: relative;
-  left: 1075px;
-  bottom: 82px;
-  z-index: -3;
-}
-
-.coin {
-  position: relative;
-  left: 300px;
-}
-
-.bomb {
-  position: relative;
-  left: 445px;
-  bottom: 30px;
-}
-
-.form {
-  height:500px;
-  width: 300px;
-  background-color: white;
-}
-
-/* .form_background {
-  background: url("https://imgur.com/RG03PyX.png") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} */
-
-  /* .background {
-    background: #26262b;
-    background-size: 100%;
-  } */
-  html {
-    background: #26262b;
-  }
-
+  
   /* .default {
     background: #26262b;
+    height: 1000px;
   } */
+
+  @keyframes slidefromtop {
+    30% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .form_background {
+    position: relative;
+    background-image: url("https://i.redd.it/vda9rbt01en01.png");
+    background-size: cover;
+    height: 900px;
+  }
+
+  .loginform {
+    height: 420px;
+    width: 475px;
+    position: absolute;
+    left: 25%;
+    top: 28%;
+    background: #36393f;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 16px 40px black;
+    animation: .5s ease 0s 1 slidefromtop;
+  }
+
+  .signupform {
+    height: 450px;
+    width: 475px;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    background: #36393f;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 16px 40px black;
+    animation: .5s ease 0s 1 slidefromtop;
+  }
+  
+  .greeting {
+    color: white;
+    margin-top: 30px;
+    margin-left: 29%;
+    padding: 10px;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 23px;
+    font-weight: 200;
+    width: 50%;
+  }
+
+  .extra {
+    color: darkgrey;
+    margin-left: 95px;
+    padding: 3px;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+  }
+
+  .label {
+    color: grey;
+    margin-left: 10%;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    padding-top: 15px;
+    padding-bottom: 5px;
+  }
+
+  .errorlabel {
+    color: #f04747;
+    margin-left: 10%;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    padding-top: 15px;
+    padding-bottom: 5px;
+  }
+
+  .input {
+    background: #303338;
+    border-color: #212327;
+    width: 77%;
+    margin-left: 10%;
+    border-radius: 3px;
+    padding: 6px;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: white;
+  }
+
+  .input:hover {
+    border-color: black;
+  }
+
+  .input:focus {
+    border-color: #7189da;
+  }
+
+  .errorinput {
+    background: #303338;
+    border-color: #f04747;
+    width: 77%;
+    margin-left: 10%;
+    border-radius: 3px;
+    padding: 6px;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: white;
+  }
+
+  .inputform {
+    background: #7189da;
+    border-color: #7189da;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 3px;
+    margin-top: 3%;
+    padding: 5px;
+    color: white;
+  }
+
+  .inputform:hover {
+    -webkit-filter: brightness(80%);
+  }
+
+  .errormessage {
+    font-style: italic;
+  }
+
+  .switchlink {
+    margin-top: 2%;
+    color: #7189da;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .question {
+    margin-left: 10%;
+    margin-top: 2%;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    color: #72767d;
+  }
+
+  .forgot {
+    margin-left: 10%;
+    margin-top: 2%;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    color: #7189da;
+  }
+
+  .switchlink:hover {
+    text-decoration: underline;
+  }
+
+   .forgot:hover {
+    text-decoration: underline;
+    cursor: pointer;
+   }
+
+  

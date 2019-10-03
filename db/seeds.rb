@@ -9,3 +9,5 @@
 User.destroy_all
 
 user_1 = User.create(email: "email@gmail.com", password: "password", username: "bestUser")
+
+demo_user = User.create(email: "demo@gmail.com", password: "password", username: "DemoUser")
