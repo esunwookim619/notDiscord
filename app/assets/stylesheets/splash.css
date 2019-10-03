@@ -140,7 +140,7 @@ nav {
   font-weight: 700;
   font-size: 36px;
   align-self: center;
-  margin-top: 5%;
+  margin-top: 4%;
 }
 
 .splashmini {
@@ -157,16 +157,23 @@ nav {
   padding-top: 5px;
 }
 
-h3 {
+.broken {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  color: lightgrey;
+  padding: 5px;
+}
+
+.broken:hover {
   color: white;
 }
 
 .nav_left {
-  padding-left: 150px;
+  padding-left: 250px;
   padding-top: 25px;
   display: flex;
   justify-content: space-evenly;
-  width: 400px;
+  width: 500px;
 }
 
 .circle {
@@ -219,3 +226,105 @@ h3 {
   animation: 200s ease 0s 1000 slidefrombottom; */
 }
  
+.dot1 {
+  position: relative;
+  z-index: 20;
+  -webkit-filter: brightness(50%);
+  left: 920px;
+  bottom: 400px;
+  
+}
+.dot2 {
+  position: relative;
+  z-index: 20;
+  -webkit-filter: brightness(50%);
+  left: 530px;
+  bottom: 350px;
+}
+.dot3 {
+  position: relative;
+  z-index: 20;
+  -webkit-filter: brightness(50%);
+  left: 15px;
+  bottom: 430px;
+}
+.dot4 {
+  position: relative;
+  z-index: 20;
+  -webkit-filter: brightness(50%);
+  right: 325px;
+  bottom: 30px;
+  
+}
+.dot5 {
+  position: relative;
+  z-index: 20;
+  -webkit-filter: brightness(50%);
+  left: 840px;
+}
+
+.triangle1 {
+  position: relative;
+  z-index: 20;
+  -webkit-filter: brightness(50%);
+  right: 360px;
+  bottom: 160px;
+}
+
+.triangle2 {
+  position: relative;
+  z-index: 20;
+  -webkit-filter: brightness(50%);
+  left: 190px;
+  bottom: 410px;
+}
+
+.buttoncontainer {
+  align-self: center;
+  width: 540px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nodl {
+  background: #43b581;
+  border-color: #43b581;
+  color: white;
+  border-radius: 3px;
+  height: 45px;
+  width: 250px;
+  position: relative;
+  top: 30px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.noopen {
+  background: #7289da;
+  border-color: #7289da;
+  color: white;
+  border-radius: 3px;
+  height: 45px;
+  width: 250px;
+  position: relative;
+  top: 30px;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.x1 {
+  position: relative;
+  z-index: 20;
+  -webkit-filter: brightness(50%);
+  left: 700px;
+  bottom: 110px;
+}
+
+.x2 {
+  position: relative;
+  z-index: 20;
+  -webkit-filter: brightness(50%);
+  bottom: 340px;
+  right: 450px;
+}
