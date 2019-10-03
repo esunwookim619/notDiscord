@@ -3,7 +3,7 @@ import React from "react";
 class Circle extends React.Component {
   render() {
     return (
-      <img className="circle" src={window.circleURL} />
+      <img className={`circle${this.props.num}`} src={window.circleURL} />
     )
   }
 }

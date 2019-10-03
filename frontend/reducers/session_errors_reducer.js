@@ -1,4 +1,4 @@
-import { RECEIVE_SESSION_ERRORS, RECEIVE_CURRENT_USER} from "../actions/session_actions";
+import { REMOVE_ERRORS, RECEIVE_SESSION_ERRORS, RECEIVE_CURRENT_USER} from "../actions/session_actions";
 
 export default (state = [], action) => { 
   Object.freeze(state);
@@ -7,6 +7,8 @@ export default (state = [], action) => {
       return [];
     case RECEIVE_SESSION_ERRORS:
       return action.errors;
+    case REMOVE_ERRORS:
+      return [];
     default:
       return state;
   }

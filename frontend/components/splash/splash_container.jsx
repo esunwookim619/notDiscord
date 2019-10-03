@@ -16,6 +16,8 @@ import Square from "./square";
 import Dot from "./dot";
 import Triangle from "./triangle";
 import X from "./x";
+import Weight from "./weight";
+import Potion from "./potion";
 
 export const SplashContainer = () => {
   return (
@@ -43,6 +45,7 @@ export const SplashContainer = () => {
           <button className="noopen">Do not open</button>
           </div>
         </div>
+        
         <div className="electronics">
           <div className="aic">
             <Android />
@@ -55,13 +58,13 @@ export const SplashContainer = () => {
             <Headphones />
           </div>
         </div>
-
+        <div className="icons">
         <Bomb />
         <Cartridge />
         <Coin />
         <Coin2 />
         <Mariobox />
-        <Circle />
+        <Circle num="1" />
 
         <Square num="1"/>
         <Square num="2" />
@@ -76,6 +79,10 @@ export const SplashContainer = () => {
         <Triangle num="2"/>
         <X num="1" />
         <X num="2" />
+        <Weight />
+        <Potion />
+        <Circle num="2" />
+      </div>
       </div>
       
     </div>

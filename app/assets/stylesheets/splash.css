@@ -37,97 +37,15 @@ nav {
    color: white;
  }
 
-  .splash {
-   background: #26262b;
-   /* position: relative; */
-   height: 1600px;
-   z-index: -10;
- }
-
-   .logout {
-   position: relative;
-   right: 200px;
-   bottom: 10px;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-evenly;
- } 
-
-
-
-  .electronics {
-  position: relative;
+ .nav_left {
+  /* padding-left: 250px;
+  padding-top: 25px; */
+  margin-left: 14%;
+  padding-top: 25px;
   display: flex;
-  bottom: 210px;
- }
-
- .aic {
-   position: relative;
-   left: 400px;
-   top: 640px; 
-   z-index: 10;
- }
-
- .controller {
-   position: relative;
-   top: 75px;
- }
-
- .dlh {
-   position: relative;
-   top: 425px;
-   left: 210px;
- }
-
- .laptop {
-   position: relative;
-   top: 58px;
-   right: 295px;
-   z-index: 9;
- }
-
-.headphones {
-  position: relative;
-  right: 605px;
-  bottom: 35px;
-  height: 200px;
-  z-index: 10;
+  justify-content: space-evenly;
+  width: 500px;
 }
-
-.bomb {
-  position: relative;
-  left: 465px;
-  bottom: 200px;
-}
-
-.coin {
-  position: relative;
-  left: 335px;
-  bottom: 175px;
-}
-
-.mariobox {
-  position: relative;
-  left: 355px;
-  bottom: 330px;
-  z-index: 1;
-}
-
-
-
-.cartridge {
-  position: relative;
-  left: 1100px;
-  bottom: 255px;
-  z-index: 1;
-}
-
-.desktop {
-  position: relative;
-  z-index: 3;
-}
-
-
 
 .wordcontainer {
   display: flex;
@@ -141,6 +59,7 @@ nav {
   font-size: 36px;
   align-self: center;
   margin-top: 4%;
+  z-index: 20;
 }
 
 .splashmini {
@@ -148,6 +67,7 @@ nav {
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   align-self: center;
   padding-top: 20px;
+  z-index: 20;
 } 
 
 .splashmini2 {
@@ -155,6 +75,7 @@ nav {
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   align-self: center;
   padding-top: 5px;
+  z-index: 20;
 }
 
 .broken {
@@ -166,124 +87,6 @@ nav {
 
 .broken:hover {
   color: white;
-}
-
-.nav_left {
-  padding-left: 250px;
-  padding-top: 25px;
-  display: flex;
-  justify-content: space-evenly;
-  width: 500px;
-}
-
-.circle {
-  position: relative;
-  z-index: 20;
-  bottom: 380px;
-  left: 140px;
-  -webkit-filter: brightness(50%);
-}
-
-.square1 {
-  position: relative;
-  z-index: 20;
-  -webkit-filter: brightness(50%);
-  left: 875px;
-  bottom: 280px;
-}
-
-.square2 {
-  position: relative;
-  z-index: 20;
-  -webkit-filter: brightness(50%);
-  left: 765px;
-  bottom: 450px;
-}
-
-/* @keyframes slidefromtop {
-    30% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-
-@keyframes slidefrombottom {
-    100% {
-      transform: translateY(0);
-    }
-    30% {
-      transform: translateY(-100%);
-    }
-} */
-
-.coin2 {
-  position: relative;
-  left: 750px;
-  bottom: 410px;
-  /* animation: 200s ease 0s 1000 slidefromtop;
-  animation: 200s ease 0s 1000 slidefrombottom; */
-}
- 
-.dot1 {
-  position: relative;
-  z-index: 20;
-  -webkit-filter: brightness(50%);
-  left: 920px;
-  bottom: 400px;
-  
-}
-.dot2 {
-  position: relative;
-  z-index: 20;
-  -webkit-filter: brightness(50%);
-  left: 530px;
-  bottom: 350px;
-}
-.dot3 {
-  position: relative;
-  z-index: 20;
-  -webkit-filter: brightness(50%);
-  left: 15px;
-  bottom: 430px;
-}
-.dot4 {
-  position: relative;
-  z-index: 20;
-  -webkit-filter: brightness(50%);
-  right: 325px;
-  bottom: 30px;
-  
-}
-.dot5 {
-  position: relative;
-  z-index: 20;
-  -webkit-filter: brightness(50%);
-  left: 840px;
-}
-
-.triangle1 {
-  position: relative;
-  z-index: 20;
-  -webkit-filter: brightness(50%);
-  right: 360px;
-  bottom: 160px;
-}
-
-.triangle2 {
-  position: relative;
-  z-index: 20;
-  -webkit-filter: brightness(50%);
-  left: 190px;
-  bottom: 410px;
-}
-
-.buttoncontainer {
-  align-self: center;
-  width: 540px;
-  display: flex;
-  justify-content: space-between;
 }
 
 .nodl {
@@ -298,6 +101,7 @@ nav {
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-weight: 400;
   font-size: 15px;
+  z-index: 20;
 }
 
 .noopen {
@@ -311,20 +115,232 @@ nav {
   top: 30px;
   font-weight: 400;
   font-size: 15px;
+  z-index: 20;
 }
 
-.x1 {
-  position: relative;
-  z-index: 20;
-  -webkit-filter: brightness(50%);
-  left: 700px;
-  bottom: 110px;
+
+
+ 
+
+   .logout {
+   position: relative;
+   right: 200px;
+   bottom: 10px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+ } 
+
+.buttoncontainer {
+  align-self: center;
+  width: 540px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.x2 {
-  position: relative;
-  z-index: 20;
+
+ /* -webkit-filter: brightness(50%); */
+
+  .splash {
+   background: #26262b;
+   /* position: relative; */
+   height: 1600px;
+   z-index: -10;
+   width: 100%;
+ }
+
+ .electronics {
+   position: absolute;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   width: 100%;
+   height: 100%;
+ }
+
+ .aic {
+   position: absolute;
+   top: 47%;
+   left: 22%;
+   z-index: 20;
+ }
+
+ .controller {
+   position: absolute;
+   bottom: 0;
+ }
+
+ .dlh {
+  position: absolute;
+  top: 21.8%;
+  z-index:10;
+ }
+
+ .headphones {
+   position: absolute;
+   height: 200px;
+   top: 21.3%;
+
+ }
+
+ .laptop {
+   position: absolute;
+   top: 25%;
+   left: 49%;
+ }
+
+ .desktop {
+   position: relative;
+ }
+
+ .bomb {
+   position: absolute;
+   left: 23.5%;
+   top: 60%;
+ }
+
+ .coin {
+   position: absolute;
+   left: 26.3%;
+   top: 64%;
+   z-index: 2;
+ }
+
+ .triangle1 {
+   position: absolute;
+   left: 18%;
+   top: 70%;
+   -webkit-filter: brightness(50%);
+   z-index: 1;
+ }
+
+ .dot1 {
+   position: absolute;
+   left: 17%;
+   top: 80%;
+   -webkit-filter: brightness(50%);
+   z-index: 1;
+ }
+
+ .dot2 {
+   position: absolute;
+   left: 33%;
+   top: 36%;
+   -webkit-filter: brightness(50%);
+   z-index: 1;
+ }
+
+ .dot3 {
+   position: absolute;
+   left: 60%;
+   top: 47%;
+   z-index: 1;
   -webkit-filter: brightness(50%);
-  bottom: 340px;
-  right: 450px;
+ }
+
+ .dot4 {
+   position: absolute;
+   left: 83%;
+   top: 88%;
+   -webkit-filter: brightness(50%);
+   z-index: 1;
+ }
+
+ .dot5 {
+   position: absolute;
+   left: 78%;
+   top: 36%;
+   -webkit-filter: brightness(50%);
+   z-index: 1;
+ }
+
+ .x1 {
+  position: absolute;
+   left: 19%;
+   top: 45%;
+   -webkit-filter: brightness(50%);
+   z-index: 1;
+ }
+
+ .x2 {
+  position: absolute;
+   left: 78.6%;
+   top: 79%;
+   -webkit-filter: brightness(50%);
+   z-index: 1;
+ }
+
+ .circle2 {
+   position: absolute;
+   left: 81%;
+   top: 73%;
+   -webkit-filter: brightness(50%);
+   z-index: 1;
+ }
+
+ .circle1 {
+   position: absolute;
+   left: 30%;
+   top: 43%;
+   -webkit-filter: brightness(50%);
+   z-index: 1;
+ }
+
+ .mariobox {
+   position: absolute;
+   left: 37.6%;
+   top: 45.5%;
+   z-index: 1;
+ }
+
+ .triangle2 {
+   position: absolute;
+   left: 51.5%;
+   top: 41%;
+   -webkit-filter: brightness(50%);
+   z-index: 1;
+ }
+
+ .coin2 {
+   position: absolute;
+   left: 54%;
+   top: 39%;
+   z-index: 2;
+ }
+
+ .cartridge {
+   position: absolute;
+   left: 63.5%;
+   top: 53.8%;
+   z-index: 1;
+ }
+
+ .square1 {
+   position: absolute;
+   left: 67.5%;
+   top: 36%;
+   z-index: 1;
+   -webkit-filter: brightness(50%);
+ }
+
+.square2 {
+  position: absolute;
+  left: 73%;
+  top: 58%;
+  z-index: 1;
+  -webkit-filter: brightness(50%);
+}
+
+.weight {
+  position: relative;
+  left: 72.6%;
+  top: 550px;
+  z-index: 1;
+}
+
+.potion {
+  position: absolute;
+  left: 18.5%;
+  top: 85.5%;
+  z-index: 1;
 }
