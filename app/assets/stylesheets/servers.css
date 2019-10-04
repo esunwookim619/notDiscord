@@ -1,3 +1,20 @@
+@keyframes slidefromright {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+@keyframes slidefromleft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .serverindex {
   width: 70px;
   position: absolute;
@@ -91,6 +108,7 @@
   background-color: white;
   display: flex;
   flex-direction: column;
+  animation: .5s ease 0s 1 slidefromright;
 }
 
 .anotherserverwriting {
@@ -243,6 +261,7 @@
   background-color: white;
   display: flex;
   flex-direction: column;
+  animation: .5s ease 0s 1 slidefromleft;
 }
 
 .createserverheading {
@@ -380,4 +399,27 @@
 
 .back:hover {
   border-bottom: 2px solid darkgrey;
+}
+
+  .logout {
+  transition: .2s;
+  height: 48px;
+  width: 48px;
+  background-color: #36393f;
+  border-radius: 48px;
+  border-color: #36393f;
+  align-self: center;
+  font-size: 18px;
+  color: #43b581;
+  padding-bottom: 8px;
+  padding-top: 7px;
+  position: absolute;
+  bottom: 1%;
+}
+
+.logout:hover {
+  transition: .2s;
+  background-color: #43b581;
+  border-radius: 15px;
+  color: white;
 }

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Servers from './servers';
 import { fetchServers, createServer, updateServer, deleteServer } from '../../actions/server_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
-
+import { logout } from '../../actions/session_actions';
 
 const msp = state => {
   return {
@@ -18,7 +18,8 @@ const mdp = dispatch => {
     updateServer: (server) => dispatch(updateServer(server)),
     deleteServer: (id) => dispatch(deleteServer(id)),
     openModal: (str) => dispatch(openModal(str)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    logout: () => dispatch(logout()),
   };
 };
 

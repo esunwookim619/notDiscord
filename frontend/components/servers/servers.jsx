@@ -7,6 +7,7 @@ class Servers extends React.Component {
   constructor(props) {
     super(props);
     this.pickServers = this.pickServers.bind(this);
+    this.loggingOut = this.loggingOut.bind(this);
   }
 
   componentDidMount() {
@@ -22,6 +23,11 @@ class Servers extends React.Component {
   pickServers(servers) {
     
     return servers.filter(server => server.admin_id === this.props.currentUserId)
+  }
+
+  loggingOut() {
+    this.props.logout()
+      .then(() => { this.props.history.push("/") });
   }
 
 
@@ -41,6 +47,8 @@ class Servers extends React.Component {
           {servers}
         </ul>
         <button className="addbutton" onClick={() => this.props.openModal('new server')}>+</button>
+
+        <button className="logout" onClick={this.loggingOut}>LO</button> 
 
       </div>
     )

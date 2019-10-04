@@ -14,8 +14,8 @@ class NewServer extends React.Component {
           <div>
           <p className="createp">CREATE</p>
           <div className="wordbunch">
-          <p className="words">Create a new server and</p>
-          <p className="words">invite your friends. It's free!</p>
+          <p className="words">Create a new server.</p>
+          <p className="words">It's pretty cool!</p>
           </div>
           </div>
           <CreateServer />
@@ -25,8 +25,8 @@ class NewServer extends React.Component {
           <div>
             <p className="joinp">JOIN</p>
             <div className="wordbunch">
-            <p className="words">Enter an invite and join your</p>
-            <p className="words">friend's server.</p>
+            <p className="words">This does NOT work </p>
+            <p className="words">right now.</p>
             </div>
           </div>
           <JoinServer />

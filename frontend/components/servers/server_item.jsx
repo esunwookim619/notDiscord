@@ -21,7 +21,7 @@ class ServerItem extends React.Component {
   }
 
   handleClick (e) {
-    
+    e.preventDefault();
     if (e.type === 'click') {
       //left click
     } else if (e.type === 'contextmenu') {

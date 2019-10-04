@@ -13,7 +13,7 @@ const App = () => (
   <>
     <Modal />
 
-    <Route path="/channels/@me" component={ServersContainer} />
+    <Route path="/channels/@me" component={ServersContainer} /> 
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <Route exact path="/" component={SplashContainer} />
@@ -21,3 +21,5 @@ const App = () => (
 );
 
 export default App;
+
+//make sure i can't get to /@me without being logged in

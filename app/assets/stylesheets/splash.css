@@ -120,17 +120,6 @@ nav {
 
 
 
- 
-
-   .logout {
-   position: relative;
-   right: 200px;
-   bottom: 10px;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-evenly;
- } 
-
 .buttoncontainer {
   align-self: center;
   width: 540px;

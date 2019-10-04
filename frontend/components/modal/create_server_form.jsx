@@ -31,8 +31,8 @@ class CreateServerForm extends React.Component {
       <div>
         <form className="createserveform" onSubmit={this.handleSubmit}>
           <div className="createserverheading">CREATE YOUR SERVER</div>
-          <div className="createserverwords">Be creating a server, you will have access to free voice and</div>
-          <div className="createserverwords">text chat to use amongst your friends.</div>
+          <div className="createserverwords">By creating a server, you won't have access to voice chat.</div>
+          <div className="createserverwords">You can't text chat yet either. Sucks...</div>
           
           <div className="serverinnerform">
             <label className="createserverlabel">SERVER NAME</label>
