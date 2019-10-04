@@ -150,82 +150,94 @@ nav {
  }
 
  .electronics {
-   position: absolute;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-evenly;
+   position: relative;
    width: 100%;
-   height: 100%;
+   height: 700px;
  }
 
  .aic {
    position: absolute;
-   top: 47%;
-   left: 22%;
+   top: 59.8%;
+   left: 20.8%;
    z-index: 20;
+   width: 300px;
+ }
+
+ .iphone {
+   position: absolute;
+   z-index: 20;
+   margin-top: 2%;
+   margin-left: 4%;
  }
 
  .controller {
    position: absolute;
    bottom: 0;
+   margin-left: 53%;
  }
 
  .dlh {
   position: absolute;
-  top: 21.8%;
+  top: 29.5%;
   z-index:10;
+  width: 90%;
+  height: 75%;
+  left: 30%;
  }
 
  .headphones {
    position: absolute;
    height: 200px;
-   top: 21.3%;
+   top: 19.5%;
+   left: 39.3%;
 
  }
 
  .laptop {
    position: absolute;
-   top: 25%;
-   left: 49%;
+   top: 22.5%;
+   left: 22%;
  }
 
  .desktop {
-   position: relative;
+   position: absolute;
+   left: 5%;
+
  }
 
  .bomb {
    position: absolute;
-   left: 23.5%;
-   top: 60%;
+   left: 24.2%;
+   top: 38%;
  }
 
  .coin {
    position: absolute;
-   left: 26.3%;
-   top: 64%;
+   left: 27%;
+   top: 44%;
    z-index: 2;
  }
 
  .triangle1 {
    position: absolute;
-   left: 18%;
-   top: 70%;
+   left: 18.8%;
+   top: 50%;
    -webkit-filter: brightness(50%);
    z-index: 1;
  }
 
  .dot1 {
    position: absolute;
-   left: 17%;
-   top: 80%;
+   left: 18%;
+   top: 63%;
    -webkit-filter: brightness(50%);
    z-index: 1;
  }
 
  .dot2 {
    position: absolute;
-   left: 33%;
-   top: 36%;
+   left: 32.5%;
+   top: 7%;
    -webkit-filter: brightness(50%);
    z-index: 1;
  }
@@ -233,7 +245,7 @@ nav {
  .dot3 {
    position: absolute;
    left: 60%;
-   top: 47%;
+   top: 22%;
    z-index: 1;
   -webkit-filter: brightness(50%);
  }
@@ -241,106 +253,106 @@ nav {
  .dot4 {
    position: absolute;
    left: 83%;
-   top: 88%;
+   top: 71%;
    -webkit-filter: brightness(50%);
    z-index: 1;
  }
 
  .dot5 {
    position: absolute;
-   left: 78%;
-   top: 36%;
+   left: 78.5%;
+   top: 8%;
    -webkit-filter: brightness(50%);
    z-index: 1;
  }
 
  .x1 {
   position: absolute;
-   left: 19%;
-   top: 45%;
+   left: 18.7%;
+   top: 20%;
    -webkit-filter: brightness(50%);
    z-index: 1;
  }
 
  .x2 {
   position: absolute;
-   left: 78.6%;
-   top: 79%;
+   left: 79%;
+   top: 61%;
    -webkit-filter: brightness(50%);
    z-index: 1;
  }
 
  .circle2 {
    position: absolute;
-   left: 81%;
-   top: 73%;
+   left: 81.2%;
+   top: 53%;
    -webkit-filter: brightness(50%);
    z-index: 1;
  }
 
  .circle1 {
    position: absolute;
-   left: 30%;
-   top: 43%;
+   left: 30.7%;
+   top: 17%;
    -webkit-filter: brightness(50%);
    z-index: 1;
  }
 
  .mariobox {
    position: absolute;
-   left: 37.6%;
-   top: 45.5%;
+   left: 37.3%;
+   top: 19.3%;
    z-index: 1;
  }
 
  .triangle2 {
    position: absolute;
-   left: 51.5%;
-   top: 41%;
+   left: 51.6%;
+   top: 14%;
    -webkit-filter: brightness(50%);
    z-index: 1;
  }
 
  .coin2 {
    position: absolute;
-   left: 54%;
-   top: 39%;
+   left: 54.4%;
+   top: 12%;
    z-index: 2;
  }
 
  .cartridge {
    position: absolute;
    left: 63.5%;
-   top: 53.8%;
+   top: 29.4%;
    z-index: 1;
  }
 
  .square1 {
    position: absolute;
-   left: 67.5%;
-   top: 36%;
+   left: 67.8%;
+   top: 7%;
    z-index: 1;
    -webkit-filter: brightness(50%);
  }
 
 .square2 {
   position: absolute;
-  left: 73%;
-  top: 58%;
+  left: 73.3%;
+  top: 35%;
   z-index: 1;
   -webkit-filter: brightness(50%);
 }
 
 .weight {
-  position: relative;
+  position: absolute;
   left: 72.6%;
-  top: 550px;
+  top: 82%;
   z-index: 1;
 }
 
 .potion {
   position: absolute;
-  left: 18.5%;
-  top: 85.5%;
+  left: 17.5%;
+  top: 67.5%;
   z-index: 1;
 }

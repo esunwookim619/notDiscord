@@ -21,7 +21,7 @@ import Potion from "./potion";
 
 export const SplashContainer = () => {
   return (
-    <>
+    
     <div className="splash">
         <nav>
           <div className="nav_left">
@@ -35,7 +35,6 @@ export const SplashContainer = () => {
             <GreetingContainer />
           </div>
         </nav>
-      <div className="container">
         <div className="wordcontainer">
           <p className="splashgreeting">It's time to ditch Discord and TeamSpeak.</p>
           <p className="splashmini">No voice and only text chats for AppAcademy students that works only on full screen monitors of atleast 20".</p>
@@ -45,7 +44,7 @@ export const SplashContainer = () => {
           <button className="noopen">Do not open</button>
           </div>
         </div>
-        
+      
         <div className="electronics">
           <div className="aic">
             <Android />
@@ -57,8 +56,8 @@ export const SplashContainer = () => {
             <Laptop />
             <Headphones />
           </div>
-        </div>
-        <div className="icons">
+       
+        
         <Bomb />
         <Cartridge />
         <Coin />
@@ -82,11 +81,12 @@ export const SplashContainer = () => {
         <Weight />
         <Potion />
         <Circle num="2" />
-      </div>
-      </div>
+      
+      
       
     </div>
-    </>
+    </div>
+    
   );
 }
 

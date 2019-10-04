@@ -1,0 +1,1 @@
+json.extract! server, :id, :admin_id, :server_name
