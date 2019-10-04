@@ -1,10 +1,12 @@
 import React from 'react';
+import ServerOptionsContainer from './server_options_container';
 
 class ServerItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isHovering: false,
+      show: "invis",
     }
     this.MouseHover = this.MouseHover.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -18,14 +20,16 @@ class ServerItem extends React.Component {
 
   MouseHover() {
     this.setState(this.toggleHoverState);
+    this.setState({ show: "invis"});
   }
 
   handleClick (e) {
     e.preventDefault();
     if (e.type === 'click') {
-      //left click
+      //
     } else if (e.type === 'contextmenu') {
-      this.props.deleteServer(this.props.server.id)
+      this.setState({ show: "show"});
+      // this.props.deleteServer(this.props.server.id)
     }
   }
   
@@ -37,7 +41,12 @@ class ServerItem extends React.Component {
     } 
     let serverName = this.props.server.server_name;
     serverName = serverName.split(" ")[0];
-
+    let menu = (
+        <div className={this.state.show}>
+          <ServerOptionsContainer props={this.props} />
+        </div>
+      )
+    
     return (
       <div>
         <button
@@ -47,10 +56,9 @@ class ServerItem extends React.Component {
           onMouseEnter={this.MouseHover}
           onMouseLeave={this.MouseHover}>{first}
           {this.state.isHovering && <div className="sName">{serverName}</div>}
+          {menu}
           </button>
-        
-         
-
+          
       </div>
     )
   }

@@ -410,8 +410,6 @@
   border-radius: 48px;
   border-color: #36393f;
   align-self: center;
-  font-size: 18px;
-  color: #43b581;
   padding-bottom: 8px;
   padding-top: 7px;
   position: absolute;
@@ -422,5 +420,179 @@
   transition: .2s;
   background-color: #43b581;
   border-radius: 15px;
+}
+
+.logoutlogo {
+  padding-right: 5px;
+}
+
+.invis {
+  display: none;
+}
+
+.show {
+  width: 185px;
+  height: 90px;
+  background-color: #18191c;
+  position: relative;
+  left: 13px;
+  bottom: 50px;
+  z-index: 1000;
+  border-radius: 4px;
+  box-shadow: 0 16px 40px black;
+  display: flex;
+  flex-direction: column;
+}
+
+.delete {
+  margin-top: 10px;
+  color: #e26565;
+  font-size: 14px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  width: 175px;
+  height: 30px;
+  margin-left: 5px;
+  text-align: left;
+}
+
+.deletemsg {
+  margin-left: 10px;
+  padding-top: 6px;
+}
+
+.delete:hover {
+  color: red;
+  background-color: #36393f;
+  border-radius: 5px;
+  
+}
+
+.edit {
+  margin-top: 10px;
+  color: #8f9093;
+  font-size: 14px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  width: 175px;
+  height: 30px;
+  margin-left: 5px;
+  text-align: left;
+}
+
+.editmsg {
+  margin-left: 10px;
+  padding-top: 7px;
+}
+
+.edit:hover {
   color: white;
+  background-color: #36393f;
+  border-radius: 5px;
+  
+}
+
+.editserverform {
+  width: 440px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  background-color: #36393f;
+  border-radius: 5px;
+}
+
+.alleditele {
+  margin-left: 20px;
+}
+
+.editserverformheading {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 450;
+  font-size: 15px;
+  color: white;
+  margin-top: 25px;
+}
+
+.editnamelabel {
+  color: #8e9297;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  font-weight: 450;
+  margin-top: 25px;
+}
+
+.editinput {
+  margin-top: 12px;
+  width: 395px;
+  height: 35px;
+  border-color: #212327;
+  border-radius: 3px;
+  background: #303338;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: white;
+
+}
+
+.editinput:hover {
+    border-color: black;
+  }
+
+.editinput:focus {
+  border-color: #7189da;
+}
+
+.editserverbuttons {
+  width: 440px;
+  height: 80px;
+  background-color: #2f3136;
+  border-radius: 3px;
+  margin-top: 18px;
+}
+
+.cancelbutton {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: white;
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  right: 26%;
+  bottom: 8%;
+  background-color: transparent;
+  border-radius: 3px;
+  font-size: 13px;
+  border-color: transparent;
+}
+
+.cancelbutton:hover {
+  text-decoration: underline;
+}
+
+.editserver {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: white;
+  border-color: #7189da;
+  background-color: #7189da;
+  border-radius: 3px;
+  font-size: 13px;
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  right: 4%;
+  bottom: 8%;
+}
+
+.editserver:hover {
+  -webkit-filter: brightness(60%);
+}
+
+.resetnamelabel {
+  color: #8e9297;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  font-weight: 450;
+  margin-top: 12px;
+}
+
+.resetnamelabel:hover {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
 }

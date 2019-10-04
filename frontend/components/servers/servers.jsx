@@ -1,6 +1,8 @@
 import React from 'react';
 import ServerItem from './server_item';
 import Logo from './logo';
+import Logout from './logout';
+import { withRouter } from 'react-router-dom';
 
 
 class Servers extends React.Component {
@@ -21,9 +23,10 @@ class Servers extends React.Component {
   // }     props are changing
 
   pickServers(servers) {
-    
-    return servers.filter(server => server.admin_id === this.props.currentUserId)
-  }
+    let ownedservers =  servers.filter(server => server.admin_id === this.props.currentUserId); //doublecheck
+    let joinedservers = servers.filter(server => server.memberships.includes(this.props.currentUserId));
+  return ownedservers.concat(joinedservers);
+}
 
   loggingOut() {
     this.props.logout()
@@ -35,7 +38,8 @@ class Servers extends React.Component {
     let servers = this.pickServers(this.props.servers);
     if (servers.length > 0) {
       servers = servers.map(server => (
-         <ServerItem key={server.id} server={server} deleteServer={this.props.deleteServer}/>
+         <ServerItem key={server.id} server={server} deleteServer={this.props.deleteServer} updateServer={this.props.updateServer}
+         editModal={this.props.openModal}/>
          
       ))
     } 
@@ -48,11 +52,11 @@ class Servers extends React.Component {
         </ul>
         <button className="addbutton" onClick={() => this.props.openModal('new server')}>+</button>
 
-        <button className="logout" onClick={this.loggingOut}>LO</button> 
+        <button className="logout" onClick={this.loggingOut}><Logout /></button> 
 
       </div>
     )
 
   }
 }
-export default Servers;
+export default withRouter(Servers);

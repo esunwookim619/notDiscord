@@ -20,7 +20,7 @@ class Server < ApplicationRecord
   foreign_key: :server_id,
   class_name: :Channel
 
-  has_many :server_memberships,
+  has_many :memberships,
   foreign_key: :server_id,
   class_name: :ServerMembership
 
