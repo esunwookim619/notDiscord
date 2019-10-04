@@ -3,7 +3,6 @@ import Android from "./android";
 import Bomb from "./bomb";
 import Cartridge from "./cartridge";
 import Coin from "./coin";
-import Coin2 from "./coin2";
 import Controller from "./controller";
 import Desktop from "./desktop";
 import Headphones from "./headphones";
@@ -60,8 +59,8 @@ export const SplashContainer = () => {
         
         <Bomb />
         <Cartridge />
-        <Coin />
-        <Coin2 />
+        <Coin num="1" />
+        <Coin num="2"/>
         <Mariobox />
         <Circle num="1" />
 

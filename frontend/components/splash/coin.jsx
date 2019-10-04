@@ -3,7 +3,7 @@ import React from "react";
 class Coin extends React.Component {
   render() {
     return (
-      <img className="coin" src={window.coinURL} />
+      <img className={`coin${this.props.num}`} src={window.coinURL} />
     )
   }
 }

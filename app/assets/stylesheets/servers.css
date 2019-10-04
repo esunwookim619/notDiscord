@@ -193,3 +193,191 @@
   margin-top: 30px;
 }
 
+
+
+.serverbuttonserver {
+  transition: .2s;
+  height: 48px;
+  width: 48px;
+  background-color: #36393f;
+  border-radius: 48px;
+  border-color: #36393f;
+  margin-top: 9px;
+  color: lightgrey;
+  align-self: center;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 18px;
+}
+
+.serverbuttonserver:hover {
+  transition: .2s;
+  background-color: #7189da;
+  border-radius: 15px;
+  padding-top: 12px;
+}
+
+.serverbuttonserver:focus {
+  transition: .2s;
+  background-color: #7189da;
+  border-radius: 15px;
+}
+
+.sName {
+  height: 21px;  
+  z-index: 50;
+  position: relative;
+  left: 55px;
+  bottom: 21px;
+  background-color: black;
+  display: inline-block;
+  font-size: 15px;
+  padding: 4px;
+  border-radius: 3px;
+}
+
+
+.createserveform {
+  height: 420px;
+  width: 540px;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.createserverheading {
+  color: #7289da;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.createserverwords {
+  color: #99aab5;
+  font-weight: 400;
+  font-size: 17px;
+  text-align: center;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  padding: 3px;
+}
+
+.serverinnerform {
+  margin-top: 15px;
+  width: 460px;
+  height: 225px;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.createserverlabel {
+  color: #87909c;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.nameinput {
+  margin-top: 20px;
+  border: 0;
+  border-bottom: 2px solid lightgrey;
+  width: 240px;
+  padding-bottom: 8px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: #87909c;
+}
+
+.region {
+  color: #87909c;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  margin-top: 38px;
+}
+
+.regioncontainer {
+  margin-top: 15px;
+  height: 45px;
+  width: 235px;
+  border-radius: 3px;
+  border: lightgrey 1px solid;
+  display: flex;
+}
+
+.flag {
+  height: 30px;
+  padding: 7px;
+}
+.US {
+  font-weight: 600;
+  font-size: 15px;
+  color: #99aab5;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  width: 160px;
+  margin-top: 15px;
+  margin-left: 5px;
+  padding-right: 5px;
+}
+.cantchange{
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  color: #7289da;
+  font-size: 12px;
+  border: 0;
+  border-left: 1px solid lightgrey;
+}
+
+.regioncontainer:hover {
+  border-color: #7289da;
+  cursor: pointer;
+}
+
+.cantchange:hover {
+  background-color: #7289da;
+  color: white;
+  border-color: #7289da;
+}
+
+.serverbuttoncontainer{
+  width: 100%;
+  height: 75px;
+  margin-bottom: 0px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.makeserver {
+  background-color: #7289da;
+  width: 95px;
+  height: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+  color: white;
+  border-radius: 3px;
+  border-color: #7289da;
+  font-size: 12px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.makeserver:hover {
+  -webkit-filter: brightness(70%);
+}
+
+.back {
+  color: #99aab5;
+  font-size: 12px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  border: 0;
+  font-weight: 500;
+  height: 75%;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.back:hover {
+  border-bottom: 2px solid darkgrey;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Flag from './flag';
 
 class CreateServerForm extends React.Component {
   constructor(props) {
@@ -28,11 +29,22 @@ class CreateServerForm extends React.Component {
     
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>SERVER NAME
-            <input type="text" value={this.state.server_name} onChange={this.update("server_name")}/>
-          </label>
-          <input type="submit" value="Create"/>
+        <form className="createserveform" onSubmit={this.handleSubmit}>
+          <div className="createserverheading">CREATE YOUR SERVER</div>
+          <div className="createserverwords">Be creating a server, you will have access to free voice and</div>
+          <div className="createserverwords">text chat to use amongst your friends.</div>
+          
+          <div className="serverinnerform">
+            <label className="createserverlabel">SERVER NAME</label>
+            <input className="nameinput" type="text" value={this.state.server_name} onChange={this.update("server_name")}/>
+          
+          <div className="region">SERVER REGION</div>
+            <div className="regioncontainer"><Flag /> <p className="US">US East</p><button className="cantchange">Can't Change</button></div>
+          </div>
+          <div className="serverbuttoncontainer">
+          <button className="back" onClick={() => this.props.openModal('new server')}>GO BACK</button>
+          <input className="makeserver" type="submit" value="Create"/>
+          </div>
         </form>
       </div>
     )

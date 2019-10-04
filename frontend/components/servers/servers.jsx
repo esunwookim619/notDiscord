@@ -30,6 +30,7 @@ class Servers extends React.Component {
     if (servers.length > 0) {
       servers = servers.map(server => (
          <ServerItem key={server.id} server={server} deleteServer={this.props.deleteServer}/>
+         
       ))
     } 
    
