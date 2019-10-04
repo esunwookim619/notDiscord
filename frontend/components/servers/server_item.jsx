@@ -8,7 +8,8 @@ const ServerItem = props => {
  
   return (
   <div>
-    <button onClick={() => props.deleteServer(props.server.id)} className="serverbutton">{first}</button>
+      <button onClick={() => props.deleteServer(props.server.id)} className="serverbutton">{first}</button>
+    
   </div>
   )
 }
