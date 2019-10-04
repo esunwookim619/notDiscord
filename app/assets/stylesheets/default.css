@@ -1,0 +1,21 @@
+.leftbar {
+  width: 240px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 70px;
+  background-color: #2f3136;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightside {
+  background-color: #36393f;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 310px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}

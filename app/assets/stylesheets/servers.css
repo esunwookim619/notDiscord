@@ -244,12 +244,13 @@
   height: 21px;  
   z-index: 50;
   position: relative;
-  left: 55px;
-  bottom: 21px;
+  left: 50px;
+  bottom: 28px;
   background-color: black;
   display: inline-block;
   font-size: 15px;
-  padding: 4px;
+  padding: 8px 8px 4px 8px;
+
   border-radius: 3px;
 }
 

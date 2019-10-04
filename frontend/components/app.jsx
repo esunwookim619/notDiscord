@@ -6,14 +6,14 @@ import SignupFormContainer from "./session_form/signup_form_container";
 import { AuthRoute } from "../util/route_util";
 import { SplashContainer } from "./splash/splash_container";
 import Default from "./default";
-import ServersContainer from "./servers/servers_container";
+
 import Modal from "./modal/modal";
 
 const App = () => (
   <>
     <Modal />
 
-    <Route path="/channels/@me" component={ServersContainer} /> 
+    <Route path="/channels/@me" component={Default} /> 
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <Route exact path="/" component={SplashContainer} />
