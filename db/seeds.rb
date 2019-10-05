@@ -25,6 +25,13 @@ demoserver_2 = Server.create(admin_id: demo_user.id, server_name: "LeagueofLegen
 demoserver_3 = Server.create(admin_id: demo_user.id, server_name: "Starcraft")
 demoserver_4 = Server.create(admin_id: demo_user.id, server_name: "Overwatch")
 
+demoserver_1_channel_1 = Channel.create(server_id: demoserver_1.id, channel_name: "#general")
+demoserver_1_channel_2 = Channel.create(server_id: demoserver_1.id, channel_name: "#channel2")
+
+demoserver_2_channel_1 = Channel.create(server_id: demoserver_2.id, channel_name: "#general")
+demoserver_3_channel_1 = Channel.create(server_id: demoserver_3.id, channel_name: "#general")
+demoserver_4_channel_1 = Channel.create(server_id: demoserver_4.id, channel_name: "#general")
+
 sm_1 = ServerMembership.create(server_id: server_1.id, member_id: user_2.id)
 sm_2 = ServerMembership.create(server_id: server_1.id, member_id: user_3.id)
 

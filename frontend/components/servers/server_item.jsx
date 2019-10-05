@@ -1,5 +1,6 @@
 import React from 'react';
 import ServerOptionsContainer from './server_options_container';
+import { withRouter } from 'react-router-dom';
 
 class ServerItem extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class ServerItem extends React.Component {
   handleClick (e) {
     e.preventDefault();
     if (e.type === 'click') {
-      //
+      this.props.history.push(`/channels/${this.props.server.id}/${this.props.server.channels[0]}`)
     } else if (e.type === 'contextmenu') {
       this.setState({ show: "show"});
       // this.props.deleteServer(this.props.server.id)
@@ -56,13 +57,14 @@ class ServerItem extends React.Component {
           onMouseEnter={this.MouseHover}
           onMouseLeave={this.MouseHover}>{first}
           {this.state.isHovering && <div className="sName">{serverName}</div>}
-          {menu}
+          {menu} 
           </button>
           
       </div>
     )
+    //menu should only show if you the admin//
   }
   
 }
 
-export default ServerItem;
+export default withRouter(ServerItem);

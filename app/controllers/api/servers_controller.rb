@@ -9,6 +9,7 @@ class Api::ServersController < ApplicationController
     @server = Server.new(server_params)
     
     if @server.save
+      @server.channels.push(Channel.create({channel_name: "general", server_id: @server.id}))
       render "/api/servers/show"
     else
       render json: @server.errors.full_messages, status: 404

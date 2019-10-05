@@ -6,20 +6,26 @@ import SignupFormContainer from "./session_form/signup_form_container";
 import { AuthRoute } from "../util/route_util";
 import { SplashContainer } from "./splash/splash_container";
 import Default from "./default";
+import ChannelsIndexContainer from "./channels/channels_index_container";
 
 import Modal from "./modal/modal";
 
 const App = () => (
   <>
     <Modal />
-
-    <Route path="/channels/@me" component={Default} /> 
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
+    <Route path="/channels/" component={Default} /> 
+    <Switch>
+      
+      
+      <Route path="/channels/:serverId/:channelId" component={ChannelsIndexContainer} />
+      
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
+    </Switch>
     <Route exact path="/" component={SplashContainer} />
   </>
 );
 
 export default App;
 
-//make sure i can't get to /@me without being logged in
+//make sure i can't get to /@me without being logged in (Protected Route)

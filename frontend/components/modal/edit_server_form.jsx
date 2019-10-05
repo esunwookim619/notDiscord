@@ -37,7 +37,7 @@ class EditServerForm extends React.Component {
             <p className="editnamelabel">SERVERNAME</p>
 
             <input className="editinput" type="text" value={this.state.server_name} onChange={this.update("server_name")}/>
-            <p onClick={() => this.setState({ server_name: ""})} className="resetnamelabel">Reset Nickname</p> 
+            <p onClick={() => this.setState({ server_name: ""})} className="resetnamelabel">Reset Name</p> 
             
           </div>
           <div className="editserverbuttons">
