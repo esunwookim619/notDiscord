@@ -16,11 +16,11 @@ class Server < ApplicationRecord
   foreign_key: :admin_id,
   class_name: :User
 
-  has_many :channels,
+  has_many :channels, dependent: :destroy, 
   foreign_key: :server_id,
   class_name: :Channel
 
-  has_many :memberships,
+  has_many :memberships, dependent: :destroy,
   foreign_key: :server_id,
   class_name: :ServerMembership
 

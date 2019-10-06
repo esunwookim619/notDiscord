@@ -10,6 +10,84 @@
   z-index: 4;
 }
 
+.channelservernamebox {
+  height: 50px;
+  width: 100%;
+  border-bottom: #242529 1px solid;
+  font-size: 16px;
+  font-weight: 500px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: white;
+}
+
+.channelservernamebox:hover {
+  background-color: #36393f;
+  cursor: pointer;
+}
+
+.channelservername {
+  padding: 15px;
+}
+
+.textchannels {
+  color: #8e9297;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  margin-top: 13px;
+  width: 100%;
+}
+
+.textchannelstext:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.chevron {
+  font-size: 16px;
+  
+}
+.plus {
+  font-size: 20px;
+  margin-left: 100px;
+  font-weight: 400;
+}
+
+.plus:hover {
+  color: white;
+  cursor: pointer;
+}
+
+
+
 .channelitem {
   color: #8e9297;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  width: 225px;
+  height: 32px;
+  margin-left: 7px;
+  margin-top: 7px;
+  border-radius: 4px;
+  background-color: #2f3136;
+}
+
+.channelitem:hover {
+   -webkit-filter: brightness(130%);
+}
+
+.hashtag {
+ margin-left: 12px;
+ margin-top: 6px;
+}
+
+.channame {
+  display: flex;
+}
+
+.channametext {
+  font-size: 15px;
+  padding: 6px;
+  margin-bottom: 5px;
 }

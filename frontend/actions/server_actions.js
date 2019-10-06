@@ -36,7 +36,7 @@ export const createServer = (server) => dispatch => {
 }
 
 export const updateServer = (server) => dispatch => {
-  
+
   return ServerApiUtil.updateServer(server)
     .then(server => dispatch(receiveServer(server)));
 }

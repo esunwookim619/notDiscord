@@ -1,5 +1,6 @@
 import React from 'react';
 import Flag from './flag';
+import { withRouter } from 'react-router-dom';
 
 class CreateServerForm extends React.Component {
   constructor(props) {
@@ -9,20 +10,29 @@ class CreateServerForm extends React.Component {
       admin_id: this.props.currentUserId
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    
+    this.fetchServers = this.props.fetchServers;
   }
+
+  // componentDidMount() {
+  //   this.props.fetchServers();
+  // }
 
   update(field) {
     return (e) => {
-     
       this.setState({[field]: e.target.value});
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createServer(this.state);
-    this.props.closeModal();
+    
+    // let servers = this.props.servers;
+    this.props.createServer(this.state)
+      .then((server) => { 
+        this.props.history.push(`/channels/${server.server.id}/${server.server.channels[0]}`) });
+      
+      this.props.closeModal();
+      
   }
 
   render() {
@@ -51,4 +61,4 @@ class CreateServerForm extends React.Component {
   }
 }
 
-export default CreateServerForm;
+export default withRouter(CreateServerForm);

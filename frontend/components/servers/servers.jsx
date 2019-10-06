@@ -39,14 +39,14 @@ class Servers extends React.Component {
     if (servers.length > 0) {
       servers = servers.map(server => (
          <ServerItem key={server.id} server={server} deleteServer={this.props.deleteServer} updateServer={this.props.updateServer}
-         editModal={this.props.openModal}/>
+         editModal={this.props.openModal} currentUserId={this.props.currentUserId} servers={servers}/>
          
       ))
     } 
    
     return (
       <div className="serverindex">
-        <button className="serverbutton"><Logo /></button>
+        <button onClick={() => this.props.history.push("/channels/@me")} className="serverbutton"><Logo /></button>
         <ul className="serverul">
           {servers}
         </ul>

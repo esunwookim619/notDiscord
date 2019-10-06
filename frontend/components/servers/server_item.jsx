@@ -29,6 +29,7 @@ class ServerItem extends React.Component {
     if (e.type === 'click') {
       this.props.history.push(`/channels/${this.props.server.id}/${this.props.server.channels[0]}`)
     } else if (e.type === 'contextmenu') {
+      this.props.history.push(`/channels/${this.props.server.id}/${this.props.server.channels[0]}`) //should i not do this? not doing doesn't force rerender sometimes
       this.setState({ show: "show"});
       // this.props.deleteServer(this.props.server.id)
     }
@@ -37,9 +38,9 @@ class ServerItem extends React.Component {
 
   render() {
     let first = this.props.server.server_name[0];
-    if (first.toUpperCase() != first.toLowerCase()) {
-      first = first.toUpperCase();
-    } 
+    // if (first.toUpperCase() != first.toLowerCase()) {
+    //   first = first.toUpperCase();
+    // } 
     let serverName = this.props.server.server_name;
     serverName = serverName.split(" ")[0];
     let menu = (
