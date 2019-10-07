@@ -58,6 +58,10 @@
   cursor: pointer;
 }
 
+.imitatespace {
+  height: 5px;
+  width: 225px;
+}
 
 
 .channelitem {
@@ -68,17 +72,27 @@
   width: 225px;
   height: 32px;
   margin-left: 7px;
-  margin-top: 7px;
+  padding: 0;
   border-radius: 4px;
   background-color: #2f3136;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: none;
 }
 
 .channelitem:hover {
-   -webkit-filter: brightness(130%);
+   -webkit-filter: brightness(140%);
+   cursor: pointer;
+}
+
+.channelitem:focus {
+  -webkit-filter: brightness(140%);
+  color: white;
 }
 
 .hashtag {
- margin-left: 12px;
+ margin-left: 8px;
  margin-top: 6px;
 }
 
@@ -88,6 +102,296 @@
 
 .channametext {
   font-size: 15px;
-  padding: 6px;
-  margin-bottom: 5px;
+  padding: 7px;
+}
+
+.createchannelform {
+  width: 440px;
+  height: 380px;
+  background-color: #36393f;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.createchannelformelements {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  width: 400px;
+  height: 225px;
+}
+
+.createchannelformheader {
+  color: white;
+  font-size: 16px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.createchannelformsubheader {
+  color: #b9bbbe;
+  font-size: 12px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  margin-top: 5px;
+}
+
+.channeltypelabel {
+  position: relative;
+  top: 25px;
+  color: #8e9297;
+  font-size: 12px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 600;
+}
+
+.textcheckbox {
+  display: flex;
+  width: 400px;
+  height: 50px;
+  background-color: #303237;
+  border-radius: 3px;
+  margin-top: 35px;
+  border: 1px solid black;
+  /* z-index: 999; */
+}
+
+.textcheckbox:hover {
+  cursor: pointer;
+  background-color: rgb(113, 137, 218);
+}
+
+.tcb {
+  display: block;
+  position: relative;
+  height: 23px;
+  width: 23px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 2px;
+  border: .5px solid #acadaf;
+  left: 5px;
+}
+
+.tcb input {
+  position: relative;
+  cursor: pointer;
+  opacity: 0;
+  /* height: 0;
+  width: 0; */
+  width: 400px;
+  height: 50px;
+  bottom: 10px;
+  right: 18px;
+}
+
+/* .tcb input:focus {
+  background-color: white;
+} */
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 2px;
+}
+
+.tcb input:checked ~ .checkmark {
+  background-color: white;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.tcb input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.tcb .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid rgb(113, 137, 218);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkhash {
+  position: relative;
+  left: 13px;
+  
+}
+
+.checkspeaker {
+  position: relative;
+  left: 13px;
+  color: #acadaf;
+}
+
+.tcbdesc {
+  position: relative;
+  left: 17px;
+  top: 3px;
+  color: white;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  
+}
+
+.voicecheckbox {
+  display: flex;
+  width: 400px;
+  height: 50px;
+  background-color: #303237;
+  border-radius: 3px;
+  margin-top: 7px;
+  border: 1px solid black;
+}
+
+.voicecheckbox:hover {
+  cursor: pointer;
+}
+
+.voicecheckbox:active {
+  color: white;
+  background-color: rgb(113, 137, 218);
+}
+
+.vcb {
+  display: block;
+  position: relative;
+  height: 23px;
+  width: 23px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 2px;
+  border: .5px solid #acadaf;
+  left: 5px;
+  pointer-events: none;
+}
+
+.vcb input {
+  position: relative;
+  cursor: pointer;
+  opacity: 0;
+  /* height: 0;
+  width: 0; */
+  width: 400px;
+  height: 50px;
+  bottom: 10px;
+  right: 18px;
+}
+
+.createchannelinputform {
+  display: flex;
+  flex-direction: column;
+}
+
+.createchannelmidcontainer {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.createchannellabel {
+  color: #8e9297;
+  font-size: 12px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.createchannelinput {
+  height: 30px;
+  width: 390px;
+  background-color: #303338;
+  border: #212327 1px solid;
+  margin-top: 10px;
+  border-radius: 3px;
+  color: #d6d7d8;
+  padding: 5px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+
+.createchannelinput:focus {
+  border-color: #7189da;
+}
+
+.createchannelbottom {
+  width: 440px;
+  height: 70px;
+  background-color: #2f3136;
+  border-radius: 3px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.createchannelcancel {
+  width: 90px;
+  height: 40px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: white;
+  background-color: #2f3136;
+  font-size: 13px;
+  border-color: #2f3136;
+  margin-left: 205px;
+  margin-top: 16px;
+}
+.createchannelcancel:hover {
+  text-decoration: underline;
+}
+
+.createchannelinputbutton {
+  height: 40px;
+  width: 125px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: white;
+  background-color: #7189da;
+  font-size: 13px;
+  border-color: #7189da;
+  border-radius: 3px;
+  margin-top: 16px;
+}
+
+.createchannelinputbutton:hover {
+  -webkit-filter: brightness(80%);
+}
+
+.channeliconcontainer {
+  display: flex;
+  margin-top: 6px;
+}
+
+.editchannelgear {
+  position: relative;
+  top: 2px;
+}
+
+.editchannelgear:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(130%);
+}
+
+.deletetrashcan {
+  height: 20px;
+  width: 16px;
+}
+
+.deletetrashcan:hover {
+  -webkit-filter: brightness(130%);
+  cursor: pointer;
 }

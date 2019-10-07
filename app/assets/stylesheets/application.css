@@ -45,8 +45,9 @@
     background: #36393f;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 16px 40px black;
+    /* box-shadow: 0 16px 40px black; */
     animation: .5s ease 0s 1 slidefromtop;
+    border-radius: 6px;
   }
 
   .signupform {
@@ -58,8 +59,9 @@
     background: #36393f;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 16px 40px black;
+    /* box-shadow: 0 16px 40px black; */
     animation: .5s ease 0s 1 slidefromtop;
+    border-radius: 6px;
   }
   
   .greeting {
@@ -106,10 +108,11 @@
     border-color: #212327;
     width: 77%;
     margin-left: 10%;
-    border-radius: 3px;
+    border-radius: 5px;
     padding: 6px;
     font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
     color: white;
+    border-style: solid;
   }
 
   .input:hover {
@@ -136,7 +139,7 @@
     border-color: #7189da;
     width: 80%;
     margin-left: 10%;
-    border-radius: 3px;
+    border-radius: 5px;
     margin-top: 3%;
     padding: 5px;
     color: white;

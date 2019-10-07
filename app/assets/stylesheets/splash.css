@@ -40,11 +40,23 @@ nav {
  .nav_left {
   /* padding-left: 250px;
   padding-top: 25px; */
-  margin-left: 14%;
+  margin-left: 10%;
   padding-top: 25px;
   display: flex;
   justify-content: space-evenly;
-  width: 500px;
+  width: 600px;
+}
+
+.notdiscordlogo {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  bottom: 25%;
+}
+
+.notdiscordlogo:hover {
+  -webkit-filter: brightness(70%);
+  cursor: pointer;
 }
 
 .wordcontainer {
@@ -63,7 +75,7 @@ nav {
 }
 
 .splashmini {
-  color: #737f8d;
+  color: #a8a8aa;
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   align-self: center;
   padding-top: 20px;
@@ -71,7 +83,7 @@ nav {
 } 
 
 .splashmini2 {
-  color: #737f8d;
+  color: #a8a8aa;
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   align-self: center;
   padding-top: 5px;

@@ -17,13 +17,16 @@ import Triangle from "./triangle";
 import X from "./x";
 import Weight from "./weight";
 import Potion from "./potion";
+import NotDiscordLogo from './notdiscordlogo';
 
 export const SplashContainer = () => {
   return (
     
     <div className="splash">
         <nav>
+        
           <div className="nav_left">
+          <NotDiscordLogo />
             <h3 className="broken">Broken link</h3>
             <h3 className="broken">Broken link</h3>
             <h3 className="broken">Broken link ⌄</h3>
@@ -36,8 +39,8 @@ export const SplashContainer = () => {
         </nav>
         <div className="wordcontainer">
           <p className="splashgreeting">It's time to ditch Discord and TeamSpeak.</p>
-          <p className="splashmini">No voice and only text chats for AppAcademy students that works only on full screen monitors of atleast 20".</p>
-          <p className="splashmini2">Stop using Discord and complicate your life.</p>
+          <p className="splashmini">Text chats for AppAcademy students that works best on full screen monitors of atleast 20".</p>
+          <p className="splashmini2">Stop using Discord and try this out instead!</p>
           <div className="buttoncontainer">
           <button className="nodl">Cannot download</button>
           <button className="noopen">Do not open</button>
