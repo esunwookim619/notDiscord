@@ -24,6 +24,7 @@
   background-color: #202225;
   display: flex;
   flex-direction: column;
+  /* overflow: scroll; */
 }
 
 .serverul {
@@ -432,7 +433,7 @@
 
 .show {
   width: 185px;
-  height: 90px;
+  height: 120px;
   background-color: #18191c;
   position: relative;
   left: 13px;
@@ -468,7 +469,7 @@
 }
 
 .edit {
-  margin-top: 10px;
+  margin-top: 7px;
   color: #8f9093;
   font-size: 14px;
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -483,11 +484,32 @@
   padding-top: 7px;
 }
 
+.invite {
+  margin-top: 7px;
+  color: #7289da;
+  font-size: 14px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  width: 175px;
+  height: 30px;
+  margin-left: 5px;
+  text-align: left;
+}
+
+.invitemsg {
+  margin-left: 10px;
+  padding-top: 7px;
+}
+
 .edit:hover {
   color: white;
   background-color: #36393f;
   border-radius: 5px;
-  
+}
+
+.invite:hover {
+  color: #6f5add;
+  background-color: #36393f;
+  border-radius: 5px;
 }
 
 .editserverform {

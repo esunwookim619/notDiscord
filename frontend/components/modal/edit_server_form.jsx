@@ -5,7 +5,6 @@ class EditServerForm extends React.Component {
     super(props);
     this.state = this.props.server;
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
 
   update(field) {

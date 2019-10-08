@@ -1,0 +1,1 @@
+json.extract! servermembership, :id, :member_id, :server_id

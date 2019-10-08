@@ -1,0 +1,106 @@
+.invitationform {
+  height: 230px;
+  width: 440px;
+  background-color:#36393f;
+  border-radius: 4px;
+}
+
+.invitationformelements {
+  
+  margin-left: 20px;
+ 
+  display: flex;
+  flex-direction: column;
+}
+
+.invitationformheading {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+}
+
+.sharetext {
+  margin-top: 25px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: #b9bbbe;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.invitationurl {
+  width: 400px;
+  height: 40px;
+  background-color: #2c2e33;
+  border: 1px solid #2c2e33;
+  border-radius: 3px;
+  color: #d4d5d6;
+  font-size: 16px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.invitationurltext {
+  padding-left: 12px;
+  padding-top: 12px;
+}
+
+.invitationurl:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.invitationurltext:hover {
+  cursor: text;
+}
+
+.copybutton {
+  width: 75px;
+  height: 33px;
+  color: white;
+  background-color: #7289da;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  border-color: #7289da;
+  border-radius: 3px;
+  margin-right: 4px;
+  margin-top: 3px;
+  font-size: 12px;
+}
+
+.copybutton:hover {
+  -webkit-filter: brightness(80%);
+  cursor: pointer;
+}
+
+.expiration {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: #b9bbbe;
+  font-size: 11px;
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+.invitationformbottom {
+  height: 60px;
+  width: 440px;
+  margin-top: 20px;
+  border-radius: 3px;
+  background-color: #2f3136;
+  color: #72767d;
+}
+
+.invitegear {
+  margin-left: 400px;
+  margin-top: 20px;
+}
+
+.invitegear:hover {
+  -webkit-filter: brightness(140%);
+  cursor: pointer;
+}
+

@@ -18,4 +18,10 @@ class ServerMembership < ApplicationRecord
   foreign_key: :member_id,
   class_name: :User
 
+  def self.find_by_credentials(server_id, member_id)
+    servermembership = ServerMembership.find_by(server_id: server_id, member_id: member_id)
+    return nil unless servermembership
+    servermembership
+  end
+
 end

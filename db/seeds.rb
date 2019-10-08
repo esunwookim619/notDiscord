@@ -13,25 +13,19 @@ ServerMembership.destroy_all
 demo_user = User.create(email: "demo@gmail.com", password: "password", username: "DemoUser")
 
 user_1 = User.create(email: "email@gmail.com", password: "password", username: "bestUser")
-user_2 = User.create(email: "email2@gmail.com", password: "password", username: "bestUser2")
-user_3 = User.create(email: "email3@gmail.com", password: "password", username: "bestUser3")
-
-server_1 = Server.create(admin_id: user_1.id, server_name: "server1")
-server_2 = Server.create(admin_id: user_2.id, server_name: "server2")
-server_3 = Server.create(admin_id: user_3.id, server_name: "server3")
 
 demoserver_1 = Server.create(admin_id: demo_user.id, server_name: "AppAcademy")
 demoserver_2 = Server.create(admin_id: demo_user.id, server_name: "LeagueofLegends")
 demoserver_3 = Server.create(admin_id: demo_user.id, server_name: "Starcraft")
-demoserver_4 = Server.create(admin_id: demo_user.id, server_name: "Overwatch")
 
-demoserver_1_channel_1 = Channel.create(server_id: demoserver_1.id, channel_name: "#general")
-demoserver_1_channel_2 = Channel.create(server_id: demoserver_1.id, channel_name: "#channel2")
+demoserver_1_channel = Channel.create(server_id: demoserver_1.id, channel_name: "general")
+demoserver_2_channel = Channel.create(server_id: demoserver_2.id, channel_name: "general")
+demoserver_3_channel = Channel.create(server_id: demoserver_3.id, channel_name: "general")
 
-demoserver_2_channel_1 = Channel.create(server_id: demoserver_2.id, channel_name: "#general")
-demoserver_3_channel_1 = Channel.create(server_id: demoserver_3.id, channel_name: "#general")
-demoserver_4_channel_1 = Channel.create(server_id: demoserver_4.id, channel_name: "#general")
+user_1_server_1 = Server.create(admin_id: user_1.id, server_name: "bestUserServer1")
+user_1_server_2 = Server.create(admin_id: user_1.id, server_name: "bestUserServer2")
 
-sm_1 = ServerMembership.create(server_id: server_1.id, member_id: user_2.id)
-sm_2 = ServerMembership.create(server_id: server_1.id, member_id: user_3.id)
+user_1_server_1_channel = Channel.create(server_id: user_1_server_1.id, channel_name: "general")
+user_1_server_2_channel = Channel.create(server_id: user_1_server_2.id, channel_name: "general")
+
 

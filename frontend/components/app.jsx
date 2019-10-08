@@ -7,6 +7,7 @@ import { AuthRoute } from "../util/route_util";
 import { SplashContainer } from "./splash/splash_container";
 import Default from "./default";
 import ChannelsIndexContainer from "./channels/channels_index_container";
+import InviteContainer from './servers/invite_container';
 
 import Modal from "./modal/modal";
 
@@ -16,7 +17,7 @@ const App = () => (
     <Route path="/channels/" component={Default} /> 
     <Switch>
       
-      
+      <Route exact path="/servers/invite/:invitationUrl" component={InviteContainer} />
       <Route path="/channels/:serverId/:channelId" component={ChannelsIndexContainer} />
       
       <AuthRoute path="/login" component={LoginFormContainer} />

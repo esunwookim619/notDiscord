@@ -5,12 +5,12 @@ export const fetchServers = () => {
   })
 };
 
-// export const fetchServer = id => {
-//   return $.ajax({
-//     method: "GET",
-//     url: `api/servers/${id}`,
-//   })
-// };
+export const fetchServer = id => {
+  return $.ajax({
+    method: "GET",
+    url: `api/servers/${id}`,
+  })
+};
 
 export const createServer = server => (
   $.ajax({
@@ -33,5 +33,19 @@ export const deleteServer = id => (
   $.ajax({
     url: `api/servers/${id}`,
     method: 'DELETE'
+  })
+);
+
+export const inviteServer = server => (
+  $.ajax({
+    url: `api/servers/${server.invitation_url}`,
+    method: 'GET'
+  })
+);
+
+export const leaveServer = server => (
+  $.ajax({
+    url: `api/servers/leave/${server.id}`,
+    method: 'GET'
   })
 );

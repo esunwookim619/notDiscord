@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Delete from './delete'
 import ChannelItem from './channel_item';
+import ChatRoom from '../../ChatRoom.js';
 
 
 class ChannelsIndex extends React.Component {
@@ -60,7 +61,9 @@ class ChannelsIndex extends React.Component {
     if (currentServer.length > 0) {
       currentServer = currentServer[0].server_name;
     }
+    
     return (
+      <div>
       <div className="channelsindex">
         <div className="channelservernamebox"><div className="channelservername">{currentServer}</div></div>
         <div>
@@ -75,6 +78,9 @@ class ChannelsIndex extends React.Component {
         <ul>
           {channels}
         </ul>
+      </div>
+      {/* <ChatRoom /> */}
+      
       </div>
     );
   }
