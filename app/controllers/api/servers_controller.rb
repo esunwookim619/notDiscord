@@ -47,10 +47,12 @@ class Api::ServersController < ApplicationController
 
   def leave
      @server = Server.find(params[:server_id])
+     
     if @server
       sm = ServerMembership.find_by_credentials(@server.id, current_user.id)
-      ServerMembership.destroy(sm.id)
+      if sm.destroy
       render "api/servers/show"
+      end
     else
       render json: ["Server does not exist"], status: 404
     end

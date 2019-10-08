@@ -5,13 +5,10 @@ const ServerOptionsContainer = props => {
   if (props.props.currentUserId !== props.props.server.admin_id) {
    
     return (<div>
-      <div className="delete" onClick={() => props.props.leaveServer(props.props.server).then((server) => {
-        // debugger
-        // props.props.fetchServer(server.server.id).then((server) => {
-          
-        //   props.props.updateServer(server)});
-        props.props.updateServer(server.server).then(() =>
-        props.props.history.push(`/channels/${props.props.servers[0].id}/${props.props.servers[0].channels[0]}`))})}><div className="deletemsg">Leave server</div></div>
+      <div className="delete" onClick={() => {
+        props.props.leaveServer(props.props.server).then((server) => {
+        props.props.updateServer(server.server).then((server) =>{
+        props.props.history.push(`/channels/${props.props.servers[0].id}/${props.props.servers[0].channels[0]}`)})})}}><div className="deletemsg">Leave server</div></div>
 
     </div>) //double check later
   } else if (props.props.servers.length === 1) {

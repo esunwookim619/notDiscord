@@ -15,7 +15,7 @@ class ChatRoom extends React.Component {
       {
         received: data => {
           this.setState({
-            messages: this.state.messages.concat(data.message)
+            messages: this.state.messages.concat(data.body)
           });
         },
         speak: function (data) {
@@ -25,9 +25,9 @@ class ChatRoom extends React.Component {
     );
   }
 
-  componentDidUpdate() {
-    this.bottom.current.scrollIntoView();
-  }
+  // componentDidUpdate() {
+  //   this.bottom.current.scrollIntoView();
+  // }
 
   render() {
     const messageList = this.state.messages.map(message => {

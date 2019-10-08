@@ -7,6 +7,18 @@
     }
   }
 
+  
+  /* @keyframes slidefromright {
+    from {
+      margin-left: 70%;
+      width: 100%;
+    }
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  } */
+
 @keyframes slidefromleft {
   0% {
     transform: translateX(-100%);
@@ -15,6 +27,8 @@
     transform: translateX(0);
   }
 }
+
+
 .serverindex {
   width: 70px;
   position: absolute;
@@ -110,6 +124,14 @@
   display: flex;
   flex-direction: column;
   animation: .5s ease 0s 1 slidefromright;
+  /* animation-duration: .3s;
+  animation-name: slidefromright; */
+  /* overflow: hidden; */
+  
+}
+
+.newserver.closed {
+  max-height: 0;
 }
 
 .anotherserverwriting {

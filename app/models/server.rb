@@ -2,11 +2,12 @@
 #
 # Table name: servers
 #
-#  id          :bigint           not null, primary key
-#  admin_id    :integer          not null
-#  server_name :string           not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id             :bigint           not null, primary key
+#  admin_id       :integer          not null
+#  server_name    :string           not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  invitation_url :string
 #
 
 class Server < ApplicationRecord 

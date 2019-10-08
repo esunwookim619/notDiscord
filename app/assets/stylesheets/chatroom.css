@@ -1,0 +1,8 @@
+.chatroom-container {
+  height: 500px;
+  width: 500px;
+  background-color: red;
+  
+  position: relative;
+  z-index: 2000;
+}

@@ -8,7 +8,9 @@ export default (state = {}, action) => {
     case RECEIVE_ALL_SERVERS:
       return merge({}, state, action.servers);
     case RECEIVE_SERVER:
-      return merge({}, state, { [action.server.id]: action.server});
+      newState = merge({}, state);
+      delete newState[action.server.id];
+      return merge({}, newState, { [action.server.id]: action.server});
     case REMOVE_SERVER:
       newState = merge({}, state);
       delete newState[action.serverId];

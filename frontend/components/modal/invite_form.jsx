@@ -5,6 +5,14 @@ class InviteForm extends React.Component {
     super(props);
   }
 
+  // copyToClipboard(text) {
+  //   let textnode = document.createTextNode(text);
+    
+  //   debugger
+  //   textnode.select();
+  //   document.execCommand('copy');
+  // }
+
   render() {
   
     return (
@@ -13,7 +21,9 @@ class InviteForm extends React.Component {
       <div className="invitationformheading">Invite friends to {this.props.server.server_name}</div>
       <div className="sharetext">Share this link with others to grant access to your server!</div>
       {/* <div>{`notdiscord-aa.herokuapp.com/#/channels/${this.props.server.invitation_url}`}</div> */}
-          <div className="invitationurl"><div className="invitationurltext">{`localhost:3000/#/servers/invite/${this.props.server.invitation_url}`}</div> <button className="copybutton">Copy</button></div>
+          <div id="input" className="invitationurl"><div className="invitationurltext">{`localhost:3000/#/servers/invite/${this.props.server.invitation_url}`}</div> <button 
+            // onClick={() => this.copyToClipboard(`localhost:3000/#/servers/invite/${this.props.server.invitation_url}`)}
+          className="copybutton">Copy</button></div>
       <div className="expiration">Your invite link will not expire! :)</div>
       </div>
       <div className="invitationformbottom">
