@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 import { fetchServers } from "./actions/server_actions";
-import ChatRoom from "./ChatRoom.js";
+import ChatRoom from "./components/messages/ChatRoom";
 
 
 document.addEventListener("DOMContentLoaded", () => {

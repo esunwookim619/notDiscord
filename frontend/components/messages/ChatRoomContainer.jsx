@@ -1,0 +1,30 @@
+import { connect } from 'react-redux';
+import ChatRoom from './ChatRoom';
+import { fetchMessages, deleteMessage, createMessage, receiveMessage } from '../../actions/message_actions';
+import { withRouter } from 'react-router-dom';
+import { fetchUsers } from '../../actions/user_actions';
+
+
+const msp = (state, ownProps) => {
+ 
+  let channelId = parseInt(ownProps.match.params.channelId);
+  
+  return {
+    currentChannelId: channelId,
+    currentUserId: state.session.id,
+    messages: Object.values(state.entities.messages),
+    users: Object.values(state.entities.users)
+  };
+};
+
+const mdp = dispatch => {
+  return {
+    fetchUsers: () => dispatch(fetchUsers()),
+    receiveMessage: (message) => dispatch(receiveMessage(message)),
+    fetchMessages: () => dispatch(fetchMessages()),
+    deleteMessage: (id) => dispatch(deleteMessage(id)),
+    createMessage: (message) => dispatch(createMessage(message))
+  };
+};
+
+export default withRouter(connect(msp, mdp)(ChatRoom));

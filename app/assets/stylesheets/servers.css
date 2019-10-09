@@ -41,6 +41,10 @@
   /* overflow: scroll; */
 }
 
+/* .serverindex::-webkit-scrollbar {width: 0}
+.serverindex {overflow: -moz-scrollbars-none;}
+.serverindex {-ms-overflow-style: none; } */
+
 .serverul {
   align-self: center;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Delete from './delete'
 import ChannelItem from './channel_item';
-import ChatRoom from '../../ChatRoom.js';
+import ChatRoomContainer from '../messages/ChatRoomContainer';
 
 
 class ChannelsIndex extends React.Component {
@@ -79,7 +79,7 @@ class ChannelsIndex extends React.Component {
           {channels}
         </ul>
       </div>
-      {/* <ChatRoom /> */}
+      <ChatRoomContainer props={this.props} channels={this.props.channels} />
       
       </div>
     );

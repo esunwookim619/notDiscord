@@ -11,7 +11,7 @@ const receiveMessages = (messages) => {
   }
 };
 
-const receiveMessage = (message) => {
+export const receiveMessage = (message) => {
   return {
     type: RECEIVE_MESSAGE,
     message
@@ -25,23 +25,21 @@ const removeMessage = (message) => {
   }
 };
 
-export const fetchServers = () => dispatch => {
-
-  return ServerApiUtil.fetchServers()
-    .then(servers => dispatch(receiveServers(servers)));
+export const fetchMessages = () => dispatch => {
+  return MessageApiUtil.fetchMessages()
+    .then(messages => {
+      
+      dispatch(receiveMessages(messages))});
 }
 
-
-
-export const createServer = (server) => dispatch => {
-  return ServerApiUtil.createServer(server)
-    .then(server => dispatch(receiveServer(server)));
+export const createMessage = (message) => dispatch => {
+  return MessageApiUtil.createMessage(message)
+    .then(message => dispatch(receiveMessage(message)));
 }
 
-
-
-export const deleteServer = (id) => dispatch => {
-  return ServerApiUtil.deleteServer(id)
-    .then(server => dispatch(removeServer(server)));
+export const deleteMessage = (id) => dispatch => {
+  return MessageApiUtil.deleteMessage(id)
+    .then(message => dispatch(removeMessage(message)));
 }
+
 

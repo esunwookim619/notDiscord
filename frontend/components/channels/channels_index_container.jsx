@@ -6,7 +6,9 @@ import { fetchServers } from '../../actions/server_actions';
 
 const msp = (state, ownProps) => {
     const currentServerId = parseInt(ownProps.match.params.serverId)
+    const currentChannelId = parseInt(ownProps.match.params.channelId)
   return {
+    currentChannelId: currentChannelId,
     currentServerId: currentServerId,
     channels: Object.values(state.entities.channels),
     servers: Object.values(state.entities.servers)

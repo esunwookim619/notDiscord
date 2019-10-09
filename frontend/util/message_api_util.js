@@ -1,4 +1,5 @@
 export const fetchMessages = () => {
+
   return $.ajax({
     method: "GET",
     url: "api/messages",

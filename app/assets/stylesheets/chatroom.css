@@ -1,8 +1,132 @@
 .chatroom-container {
-  height: 500px;
-  width: 500px;
-  background-color: red;
-  
+  position: absolute;
+  z-index: 20;
+  top: 50px;   
+  bottom: 95px;
+  left: 310px;
+  right: 240px;
+  /* background-color: red; */
+  background-color: #36393f;
+  color: white;
+  overflow-y: scroll;
+}
+
+.chattopbar {
+  height: 50px;
+  position: absolute;
+  z-index: 21;
+  top: 0;
+  left: 310px;
+  right: 0;
+  background-color: #36393f;
+  border-bottom: 1px solid #2b2d32;
+}
+
+.channelnameheader {
+  font-size: 15px;
+  color: white;
+  position: absolute;
+  left: 50px;
+  top: 15px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 500;
+}
+
+.messageformcontainer {
+  height: 95px;
+  position: absolute;
+  z-index: 21;
+  bottom: 0;
+  left: 310px;
+  right: 240px;
+  background-color: #36393f;
+  border-top: 1px solid #585a60;
+}
+
+
+
+.messageforminput {
   position: relative;
-  z-index: 2000;
+  left: 2%;
+  top: 20px;
+  right: 20px;
+  height: 43px;
+  background-color: #36393f;
+  border: none;
+  border-radius: 7px;
+  width: 96.5%;
+  display: flex;
+}
+
+.messagesubmit {
+  display: none;
+}
+
+.messageforminputbutton {
+  width: 44px;
+  height: 43px;
+  border: none;
+  background-color: #40444b;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  color: #b9bbbe;
+}
+
+.messageforminputtext {
+  position: absolute;
+  left: 45px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #40444b;
+  border: none;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  width: 95%;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  color: white;
+  padding-left: 7px;
+}
+
+.individualmessagecontainer {
+  border-bottom: 1px solid #585a60;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.buttonandmessage {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.messageavatar {
+  border-color: #7289da;
+  background-color: #7289da;
+  height: 42px;
+  width: 42px;
+  border-radius: 42px;
+}
+
+.usernameandmessage {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.usernameinmessage {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  color: white;
+  font-weight: 600;
+
+}
+
+.individualmessage {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  color: white;
+  font-weight: 300;
+  margin-top: 4px;
 }
