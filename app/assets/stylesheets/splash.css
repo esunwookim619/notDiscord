@@ -148,7 +148,8 @@ nav {
    /* position: relative; */
    height: 1600px;
    z-index: -10;
-   width: 100%;
+   /* width: 100%; */
+   overflow: auto;
  }
 
  .electronics {
@@ -348,7 +349,7 @@ nav {
 .weight {
   position: absolute;
   left: 72.6%;
-  top: 82%;
+  top: 81%;
   z-index: 1;
 }
 
