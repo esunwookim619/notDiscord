@@ -99,7 +99,7 @@ class ChatRoom extends React.Component {
             <div className="buttonandmessage">
             <button className="messageavatar"><Logo /></button> 
             <div className="usernameandmessage">
-                <div className="usernameinmessage">{username} <div className="createdat">{message.created_at.slice(0, 10)}</div></div>
+                <div className="usernameinmessage">{username} <div className="createdat">{message.created_at}</div></div>
               <div className="individualmessage">{message.body}</div>
             </div>
              
