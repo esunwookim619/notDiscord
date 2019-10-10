@@ -13,10 +13,7 @@ class ChatRoom extends React.Component {
     this.bottom = React.createRef();
     this.getChannelName = this.getChannelName.bind(this);
     this.findUser = this.findUser.bind(this);
-  }
-
-  // componentDidUpdate(prevProps) {
-  // }
+  }  
 
   componentDidMount() {
     let receiveMessage = this.props.receiveMessage.bind(this);
@@ -65,6 +62,7 @@ class ChatRoom extends React.Component {
     if (myMsgs.length > 0) {
       this.bottom.current.scrollIntoView();
     }
+  
     
   }
 

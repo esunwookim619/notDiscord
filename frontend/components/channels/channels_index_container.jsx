@@ -8,12 +8,14 @@ import { updateUser } from '../../actions/user_actions';
 const msp = (state, ownProps) => {
     const currentServerId = parseInt(ownProps.match.params.serverId)
     const currentChannelId = parseInt(ownProps.match.params.channelId)
+
   return {
     currentUserId: state.session.id,
     currentChannelId: currentChannelId,
     currentServerId: currentServerId,
     channels: Object.values(state.entities.channels),
-    servers: Object.values(state.entities.servers)
+    servers: Object.values(state.entities.servers),
+    currentServer: state.entities.servers[currentServerId] // try this method to fix problem
   };
 };
 

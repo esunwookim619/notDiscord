@@ -51,7 +51,15 @@ class ChannelsIndex extends React.Component {
   componentDidUpdate(prevProps) {
     
   if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
-    this.props.fetchChannels();
+  
+    let myprops = this.props;
+    let serverId = this.props.match.params.serverId;
+    let channelId = this.props.match.params.channelId;
+    // this.props.fetchChannels(); this is only a temporary fix
+    this.props.history.push("/channels/@me")
+    this.props.fetchChannels().then(() => 
+    { 
+      myprops.history.push(`/channels/${serverId}/${channelId}`)});
     } 
   }
 
@@ -66,10 +74,15 @@ class ChannelsIndex extends React.Component {
   render() {
     const first = this.pickChannels(this.props.channels)[0]; //doesn't work if you delete the first channel for pushing
     const pickedc = this.pickChannels(this.props.channels);
+  
+    
     const channels = this.pickChannels(this.props.channels).map(channel => {
+     
       return (
+       
         <ChannelItem key={channel.id} first={first} channels={pickedc} props={this.props} channel={channel} />
-
+      
+ 
       )
     })
     let currentServerId = this.props.currentServerId;
@@ -94,8 +107,9 @@ class ChannelsIndex extends React.Component {
               {channels}
             </ul>
           </div>
-          <ChatRoomContainer props={this.props} channels={this.props.channels} />
+          {/* chat room container was here */}
           <OnlineListContainer server={currentServer} />
+          <ChatRoomContainer props={this.props} channels={this.props.channels} />
         </div>
       );
     } else {
