@@ -38,14 +38,43 @@
   background-color: #202225;
   display: flex;
   flex-direction: column;
-  /* overflow: scroll; */
+  
+ 
 }
 
 /* .serverindex::-webkit-scrollbar {width: 0}
 .serverindex {overflow: -moz-scrollbars-none;}
 .serverindex {-ms-overflow-style: none; } */
+.serverulcontainer {
+  overflow-y: scroll;
+  max-height: 710px;
+}
+.serverulcontainer::-webkit-scrollbar {
+  width: 0;
+}
 
 .serverul {
+  margin-top: 9px;
+  padding-bottom: 9px;
+  width: 48px;
+  margin: 0 auto;
+  border-top: 1px solid #585a60;
+  border-bottom: 1px solid #585a60;
+  position: absolute;
+  margin-left: 11px;
+}
+/* take out position absolute to scroll */
+
+.serverbutton {
+  transition: .2s;
+  height: 48px;
+  width: 48px;
+  background-color: #36393f;
+  border-radius: 48px;
+  border-color: #36393f;
+  margin-bottom: 9px;
+  margin-top: 9px;
+  color: lightgrey;
   align-self: center;
 }
 
@@ -86,6 +115,7 @@
   color: #43b581;
   padding-bottom: 8px;
   margin-top: 9px;
+  
 }
 
 .addbutton:hover {
@@ -110,7 +140,7 @@
   right: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 100;
+  z-index: 3000;
 }
 
 .modal-child {
@@ -252,6 +282,7 @@
   align-self: center;
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 18px;
+  
 }
 
 .serverbuttonserver:hover {
@@ -259,6 +290,7 @@
   background-color: #7189da;
   border-radius: 15px;
   padding-top: 12px;
+  
 }
 
 .serverbuttonserver:focus {
@@ -269,16 +301,16 @@
 
 .sName {
   height: 21px;  
-  z-index: 50;
-  position: relative;
-  left: 50px;
-  bottom: 28px;
+  
   background-color: black;
   display: inline-block;
   font-size: 15px;
   padding: 8px 8px 4px 8px;
-
   border-radius: 3px;
+  position: relative;
+  z-index: 1500;
+  left: 50px;
+  bottom: 28px;
 }
 
 
@@ -464,7 +496,7 @@
   position: relative;
   left: 13px;
   bottom: 50px;
-  z-index: 1000;
+  z-index: 2000;
   border-radius: 4px;
   box-shadow: 0 16px 40px black;
   display: flex;

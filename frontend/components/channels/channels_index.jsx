@@ -28,7 +28,7 @@ class ChannelsIndex extends React.Component {
     this.setState(this.toggleHoverState);
   }
 
-  componentDidMount() {
+  componentDidMount() { //in future, need to create a subscription for every channel not 1 for the entire channel index
     this.props.fetchServers();
     this.props.fetchChannels();
     let updateUser = this.props.updateUser.bind(this);
@@ -51,16 +51,18 @@ class ChannelsIndex extends React.Component {
   componentDidUpdate(prevProps) {
     
   if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
-  
-    let myprops = this.props;
-    let serverId = this.props.match.params.serverId;
-    let channelId = this.props.match.params.channelId;
-    // this.props.fetchChannels(); this is only a temporary fix
-    this.props.history.push("/channels/@me")
-    this.props.fetchChannels().then(() => 
-    { 
-      myprops.history.push(`/channels/${serverId}/${channelId}`)});
-    } 
+    
+    this.props.fetchChannels();
+    // let myprops = this.props;
+    // let serverId = this.props.match.params.serverId;
+    // let channelId = this.props.match.params.channelId;
+    // // this.props.fetchChannels(); this is only a temporary fix
+    // this.props.history.push("/channels/@me")
+    // this.props.fetchChannels().then(() => 
+    // { 
+    //   myprops.history.push(`/channels/${serverId}/${channelId}`)});
+    // } 
+  }
   }
 
   pickChannels(channels) {

@@ -29,3 +29,13 @@ export const updateUser = (user) => dispatch => {
   return UserApiUtil.updateUser(user)
     .then(user => dispatch(receiveUser(user)))
 }
+
+export const makeFriend = (friend) => dispatch => {
+  return UserApiUtil.makeFriend(friend)
+    .then(user => dispatch(receiveUser(user)))
+}
+
+export const deleteFriend = (friend) => dispatch => {
+  return UserApiUtil.deleteFriend(friend)
+    .then(user => dispatch(receiveUser(user)))
+}

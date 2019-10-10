@@ -15,10 +15,21 @@ class MessageForm extends React.Component {
       this.setState({ [field]: e.currentTarget.value });
   }
 
+  findIndex(arr) {
+    let result;
+ 
+    if (arr[0].identifier[12] === "O") {
+      result = 1;
+    } else {
+      result = 0;
+    }
+    return result;
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    
-    App.cable.subscriptions.subscriptions[1].speak({ body: this.state.body, channel_id: this.currentChannelId, author_id: this.currentUserId});
+    let index = this.findIndex(App.cable.subscriptions.subscriptions);
+    App.cable.subscriptions.subscriptions[index].speak({ body: this.state.body, channel_id: this.props.props.match.params.channelId, author_id: this.currentUserId});
     this.setState({ body: "" });
   }
 

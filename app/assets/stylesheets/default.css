@@ -24,3 +24,94 @@
 .wumpus {
   z-index: 1;
 }
+
+.wumpuscaption {
+  /* display: none; */
+ color: #b9bbbe;
+ height: 20px;
+ position: absolute;
+ top: 66%;
+ right: 43.5%;
+ font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+font-weight: 400;
+font-size: 14px;
+}
+
+.leftsearchbarcontainer {
+  width: 240px;
+  height: 50px;
+  border-bottom: 1px solid #2b2d32;
+}
+
+.leftsearchbar {
+  background-color: #202225;
+  border-color: #202225;
+  width: 205px;
+  height: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+  color: white;
+  border-radius: 4px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  padding: 4px;
+}
+
+.leftsearchbar::-webkit-input-placeholder {
+  color: #b4bbb9;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  padding: 4px;
+}
+
+.friendslist {
+  margin-left: 15px;
+  margin-top: 15px;
+  color: #8e9291;
+}
+
+.onlinelistheading {
+  margin-bottom: 10px;
+}
+
+.defaultusernamebar {
+  position: absolute;
+  bottom: 0;
+  width: 240px;
+  height: 50px;
+  background-color: #292b2f;
+  display: flex;
+  flex-direction: row;
+}
+
+.logobackgroundonline3 {
+  border-color: #747f8d;
+  background-color: #747f8d;
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.logo3 {
+  padding: 5px;
+  padding-top: 8px;
+  width: 22px;
+  height: 16px;
+}
+
+.onlineindicator3 {
+  position: relative;
+  top: 28px;
+  right: 12px;
+  height: 5px;
+}
+
+.currentuserusername {
+  color: white;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 20px;
+}

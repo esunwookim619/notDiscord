@@ -13,3 +13,17 @@ export const updateUser = user => {
     data: { user }
   })
 };
+
+export const makeFriend = friend => {
+  return $.ajax({
+    url: `api/makefriends/${friend}`,
+    method: 'GET',
+  })
+}
+
+export const deleteFriend = friend => {
+  return $.ajax({
+    url: `api/destroyfriends/${friend}`,
+    method: 'GET',
+  })
+}

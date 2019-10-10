@@ -1,10 +1,10 @@
 @-webkit-keyframes action {
         0% { transform: translateY(0); }
-        100% { transform: translateY(-10px); }
+        100% { transform: translateY(-15px); }
     }
 @keyframes action {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
+    100% { transform: translateY(-15px); }
 }
 
 nav {

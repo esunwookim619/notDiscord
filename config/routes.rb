@@ -13,7 +13,8 @@ Rails.application.routes.draw do
 
   get 'api/servers/:invitation_url', to: 'api/servers#join'
   get 'api/servers/leave/:server_id', to: 'api/servers#leave'
-
+  get 'api/makefriends/:friend_id', to: 'api/users#makefriend'
+  get 'api/destroyfriends/:friend_id', to: 'api/users#destroyfriend'
 
   mount ActionCable.server, at: '/cable'
   

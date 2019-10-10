@@ -50,11 +50,15 @@ class Servers extends React.Component {
    
     return (
       <div className="serverindex">
+        
         <button onClick={() => this.props.history.push("/channels/@me")} className="serverbutton"><Logo /></button>
+        <div className="serverulcontainer">
         <ul className="serverul">
           {servers}
+          <button className="addbutton" onClick={() => this.props.openModal('new server')}>+</button>
         </ul>
-        <button className="addbutton" onClick={() => this.props.openModal('new server')}>+</button>
+        </div>
+       
 
         <button className="logout" onClick={this.loggingOut}><Logout /></button> 
 

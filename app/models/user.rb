@@ -9,6 +9,7 @@
 #  username        :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  online          :boolean          default(FALSE)
 #
 
 class User < ApplicationRecord
@@ -26,13 +27,21 @@ class User < ApplicationRecord
   foreign_key: :admin_id,
   class_name: :Server
 
-  has_many :server_memberships,
+  has_many :server_memberships, 
   foreign_key: :member_id,
   class_name: :ServerMembership
 
-  has_many :messages,
+  has_many :messages, 
   foreign_key: :author_id,
   class_name: :Message
+
+  # has_many :selfs,
+  # foreign_key: :self_id,
+  # class_name: :Friendship
+
+  has_many :friends, dependent: :destroy,
+  foreign_key: :self_id,
+  class_name: :Friendship
 
   def inserver
     self.update({online: true})

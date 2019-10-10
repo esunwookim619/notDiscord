@@ -1,5 +1,5 @@
 import React from 'react';
-import UserItem from './user_item';
+import UserItemContainer from './user_item_container';
 import UserCircleContainer from './user_circle_container';
 import Logo from '../servers/logo';
 
@@ -39,7 +39,7 @@ class OnlineList extends React.Component {
           <div className="avatarandusernamecontainer" key={user.id}>
           <div className="logobackgroundonline"><Logo num="1" /></div>
           <UserCircleContainer user={user}/>
-          <UserItem user={user} />
+          <UserItemContainer user={user} />
           </div>
         )
       })
