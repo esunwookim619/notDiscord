@@ -57,11 +57,13 @@ export const SplashContainer = () => {
             <Desktop />
             <Laptop />
             <Headphones />
+            <Cartridge />
+            <Weight />
           </div>
        
         
         <Bomb />
-        <Cartridge />
+        
         <Coin num="1" />
         <Coin num="2"/>
         <Mariobox />
@@ -80,7 +82,7 @@ export const SplashContainer = () => {
         <Triangle num="2"/>
         <X num="1" />
         <X num="2" />
-        <Weight />
+       
         <Potion />
         <Circle num="2" />
       

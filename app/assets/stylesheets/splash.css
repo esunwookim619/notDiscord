@@ -1,3 +1,12 @@
+@-webkit-keyframes action {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-10px); }
+    }
+@keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
 nav {
    display: flex;
    justify-content: space-between;
@@ -212,6 +221,8 @@ nav {
    position: absolute;
    left: 24.2%;
    top: 38%;
+   -webkit-animation: action 2s infinite alternate;
+   animation: action 2s infinite alternate;
  }
 
  .coin1 {
@@ -219,6 +230,8 @@ nav {
    left: 27%;
    top: 44%;
    z-index: 2;
+   -webkit-animation: action 1.5s infinite alternate;
+   animation: action 1.5s infinite alternate;
  }
 
  .triangle1 {
@@ -321,13 +334,16 @@ nav {
    left: 54.4%;
    top: 12%;
    z-index: 2;
+   -webkit-animation: action 1.5s infinite alternate;
+   animation: action 1.5s infinite alternate;
  }
 
  .cartridge {
    position: absolute;
-   left: 63.5%;
-   top: 29.4%;
-   z-index: 1;
+   left: 37.5%;
+   z-index: -1;
+   -webkit-animation: action 1.5s infinite alternate;
+   animation: action 1.5s infinite alternate;
  }
 
  .square1 {
@@ -348,9 +364,9 @@ nav {
 
 .weight {
   position: absolute;
-  left: 72.6%;
-  top: 81%;
-  z-index: 1;
+  left: 48%;
+  top: 69.2%;
+  z-index: -1;
 }
 
 .potion {

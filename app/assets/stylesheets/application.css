@@ -33,7 +33,7 @@
     position: relative;
     background-image: url("https://i.redd.it/vda9rbt01en01.png");
     background-size: cover;
-    height: 900px;
+    height: 1000px;
   }
 
   .loginform {
@@ -120,7 +120,7 @@
   }
 
   .input:focus {
-    border-color: #7189da;
+    border: 1px solid #7189da;
   }
 
   .errorinput {
