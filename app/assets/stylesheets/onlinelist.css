@@ -1,0 +1,92 @@
+.onlinelist {
+  position: absolute;
+  z-index: 20;
+  top: 50px;
+  bottom: 0;
+  right: 0;
+  width: 240px;
+  background-color: #2f3136;
+  color: #8e9297;
+}
+
+.onlinelistcontainer {
+  margin-top: 25px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.onlinelistheading {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.usersul {
+  margin-top: 7px;
+}
+
+.avatarandusernamecontainer {
+  display: flex;
+  flex-direction: row;
+  width: 225px;
+  height: 45px;
+  border-radius: 4px;
+}
+
+.avatarandusernamecontainer:hover {
+  -webkit-filter: brightness(110%);
+  color: white;
+  background-color: #2f3136;
+  cursor: pointer;
+}
+
+.logobackgroundonline {
+  border-color: #faa619;
+  background-color: #faa619;
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  margin-left: 5px;
+  margin-top: 7px;
+}
+
+.logo1 {
+  padding: 5px;
+  padding-top: 8px;
+  width: 22px;
+  height: 16px;
+}
+
+.onlinecircle {
+  height: 15px;
+  width: 15px;
+}
+
+.offlinecircle {
+  height: 15px;
+  width: 15px;
+}
+
+.onlineindicator {
+  position: relative;
+  right: 13px;
+  top: 26px;
+  height: 20px;
+}
+
+.onlinelistusername {
+   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+   font-size: 15px;
+   font-weight: 400;
+   margin-top: 15px;
+}
+
+
+
+
+
+
+

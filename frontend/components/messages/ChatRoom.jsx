@@ -2,6 +2,7 @@ import React from 'react';
 import MessageForm from './MessageForm';
 import { receiveMessage } from '../../actions/message_actions';
 import Logo from '../servers/logo';
+// import GarbageCan from './garbagecan';
 
 
 class ChatRoom extends React.Component {
@@ -91,16 +92,19 @@ class ChatRoom extends React.Component {
           
           username = this.findUser(message)[0].username
         }
+       
         return (
           <li key={message.id}
             className="individualmessagecontainer">
             <div className="buttonandmessage">
             <button className="messageavatar"><Logo /></button> 
             <div className="usernameandmessage">
-              <div className="usernameinmessage">{username}</div>
+                <div className="usernameinmessage">{username} <div className="createdat">{message.created_at.slice(0, 10)}</div></div>
               <div className="individualmessage">{message.body}</div>
             </div>
+             
             </div>
+            
             <div ref={this.bottom} />
           </li>
         );

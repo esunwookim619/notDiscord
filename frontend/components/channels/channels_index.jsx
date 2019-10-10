@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom';
 import Delete from './delete'
 import ChannelItem from './channel_item';
 import ChatRoomContainer from '../messages/ChatRoomContainer';
+import OnlineListContainer from '../onlinelist/online_list_container';
+import receiveChannels from '../../actions/channel_actions';
 
 
 class ChannelsIndex extends React.Component {
@@ -11,6 +13,7 @@ class ChannelsIndex extends React.Component {
     this.pickChannels = this.pickChannels.bind(this);
     this.state = {
       isHovering: false,
+      // toggle: false
     }
     this.MouseHover = this.MouseHover.bind(this);
   }
@@ -28,6 +31,21 @@ class ChannelsIndex extends React.Component {
   componentDidMount() {
     this.props.fetchServers();
     this.props.fetchChannels();
+    let updateUser = this.props.updateUser.bind(this);
+    App.sub = App.cable.subscriptions.create(
+      { channel: "OnlineChannel", currentUserId: this.props.currentUserId },
+      {
+        received: data => {
+        
+          updateUser(data);
+          }
+        },
+        { extra: () => {} }
+      );
+  }
+
+  componentWillUnmount() {
+    App.sub.unsubscribe();
   }
 
   componentDidUpdate(prevProps) {
@@ -59,30 +77,31 @@ class ChannelsIndex extends React.Component {
       return (
         server.id === currentServerId)});
     if (currentServer.length > 0) {
-      currentServer = currentServer[0].server_name;
-    }
-    
-    return (
-      <div>
-      <div className="channelsindex">
-        <div className="channelservernamebox"><div className="channelservername">{currentServer}</div></div>
+      return (
         <div>
-          <div className="textchannels"><span className="chevron">⌄</span> <span className="textchannelstext">TEXT CHANNELS</span> <span className="plus" 
-          onMouseEnter={this.MouseHover}
-          onMouseLeave={this.MouseHover}
-          onClick={() => this.props.openModal('create channel')}>+</span>
-          {this.state.isHovering && <div className="hoveringcreatechannel"><p className="hoveringcreatechanneltext">Create Channel</p></div> }
+          <div className="channelsindex">
+            <div className="channelservernamebox"><div className="channelservername">{currentServer[0].server_name}</div></div>
+            <div>
+              <div className="textchannels"><span className="chevron">⌄</span> <span className="textchannelstext">TEXT CHANNELS</span> <span className="plus"
+                onMouseEnter={this.MouseHover}
+                onMouseLeave={this.MouseHover}
+                onClick={() => this.props.openModal('create channel')}>+</span>
+                {this.state.isHovering && <div className="hoveringcreatechannel"><p className="hoveringcreatechanneltext">Create Channel</p></div>}
+              </div>
+            </div>
+            <div className="imitatespace"></div>
+            <ul>
+              {channels}
+            </ul>
           </div>
+          <ChatRoomContainer props={this.props} channels={this.props.channels} />
+          <OnlineListContainer server={currentServer} />
         </div>
-        <div className="imitatespace"></div>
-        <ul>
-          {channels}
-        </ul>
-      </div>
-      <ChatRoomContainer props={this.props} channels={this.props.channels} />
-      
-      </div>
-    );
+      );
+    } else {
+      return (<div></div>);
+    }
+   
   }
 }
   

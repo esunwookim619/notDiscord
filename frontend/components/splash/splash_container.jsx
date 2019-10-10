@@ -27,8 +27,8 @@ export const SplashContainer = () => {
         
           <div className="nav_left">
           <NotDiscordLogo />
-            <h3 className="broken">Broken link</h3>
-            <h3 className="broken">Broken link</h3>
+            <a className="broken" href="https://github.com/esunwookim619?tab=repositories">Github</a>
+            <a className="broken" href="https://www.linkedin.com/in/edward-kim-b47908122">LinkedIn</a>
             <h3 className="broken">Broken link ⌄</h3>
             <h3 className="broken">Broken link ⌄</h3>
             <h3 className="broken">Broken link ⌄</h3>

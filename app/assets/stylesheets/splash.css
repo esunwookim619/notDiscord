@@ -95,6 +95,7 @@ nav {
   font-size: 13px;
   color: lightgrey;
   padding: 5px;
+  text-decoration: none;
 }
 
 .broken:hover {

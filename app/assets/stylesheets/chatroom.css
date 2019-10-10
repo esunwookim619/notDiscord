@@ -4,12 +4,33 @@
   top: 50px;   
   bottom: 95px;
   left: 310px;
-  right: 240px;
+  right: 243px;
   /* background-color: red; */
   background-color: #36393f;
   color: white;
   overflow-y: scroll;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2f3136;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #202225;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+  
+}
+
 
 .chattopbar {
   height: 50px;
@@ -35,15 +56,13 @@
 .messageformcontainer {
   height: 95px;
   position: absolute;
-  z-index: 21;
+  z-index: 19;
   bottom: 0;
   left: 310px;
   right: 240px;
   background-color: #36393f;
   border-top: 1px solid #585a60;
 }
-
-
 
 .messageforminput {
   position: relative;
@@ -89,10 +108,19 @@
   padding-left: 7px;
 }
 
+
+
 .individualmessagecontainer {
   border-bottom: 1px solid #585a60;
   margin-left: 20px;
   margin-right: 20px;
+  background-color: #36393f;
+  border-radius: 4px;
+}
+
+.individualmessagecontainer:hover {
+  -webkit-filter: brightness(120%);
+  cursor: pointer;
 }
 
 .buttonandmessage {
@@ -120,7 +148,15 @@
   font-size: 15px;
   color: white;
   font-weight: 600;
+  display: flex;
+  flex-direction: row;
+}
 
+.createdat {
+  margin-left: 10px;
+  color: #72767d;
+  font-size: 12px;
+  margin-top: 3px;
 }
 
 .individualmessage {
@@ -128,5 +164,6 @@
   font-size: 15px;
   color: white;
   font-weight: 300;
-  margin-top: 4px;
+  margin-top: 5px;
 }
+
