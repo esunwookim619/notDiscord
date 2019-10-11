@@ -14,8 +14,24 @@ import Online from './onlinelist/online';
 
    componentDidMount() {
      this.props.fetchUsers();
+     let updateUser = this.props.updateUser.bind(this);
+     App.sub = App.cable.subscriptions.create(
+       { channel: "OnlineChannel", currentUserId: this.props.currentUserId },
+       {
+         received: data => {
+
+           updateUser(data);
+         }
+       },
+       { extra: () => { } }
+     );
    
    }
+
+   componentWillUnmount() {
+     App.sub.unsubscribe();
+   }
+
 
   currentUser() {
     let currentUserId = this.props.currentUserId;

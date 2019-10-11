@@ -7,6 +7,7 @@ import EditServerFormContainer from './edit_server_form_container';
 import CreateChannelFormContainer from './create_channel_form_container';
 import EditChannelFormContainer from './edit_channel_form_container';
 import InviteFormContainer from './invite_form_container';
+import JoinFormContainer from './join_server_form_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -31,6 +32,9 @@ function Modal({ modal, closeModal }) {
       break;
     case 'invite form':
       component = <InviteFormContainer />;
+      break;
+    case 'join server':
+      component = <JoinFormContainer />;
       break;
     default:
       return null;

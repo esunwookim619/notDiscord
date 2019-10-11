@@ -105,14 +105,14 @@
 
   .input {
     background: #303338;
-    border-color: #212327;
+    border: #212327 solid 1px;
     width: 77%;
     margin-left: 10%;
     border-radius: 5px;
     padding: 6px;
     font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
     color: white;
-    border-style: solid;
+    
   }
 
   .input:hover {

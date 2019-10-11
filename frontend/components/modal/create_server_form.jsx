@@ -46,11 +46,12 @@ class CreateServerForm extends React.Component {
           
           <div className="serverinnerform">
             <label className="createserverlabel">SERVER NAME</label>
-            <input className="nameinput" type="text" value={this.state.server_name} onChange={this.update("server_name")}/>
+            <input className="nameinput" type="text" placeholder="Enter a server name" value={this.state.server_name} onChange={this.update("server_name")}/>
           
           <div className="region">SERVER REGION</div>
             <div className="regioncontainer"><Flag /> <p className="US">US East</p><button className="cantchange">Can't Change</button></div>
           </div>
+          <button className="createserveravatar" type="button">{this.state.server_name[0]}</button>
           <div className="serverbuttoncontainer">
           <button className="back" onClick={() => this.props.openModal('new server')}>GO BACK</button>
           <input className="makeserver" type="submit" value="Create"/>

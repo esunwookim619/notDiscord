@@ -37,7 +37,7 @@
   border: 1px solid #2c2e33;
   border-radius: 3px;
   color: #d4d5d6;
-  font-size: 16px;
+  font-size: 12.5px;
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   margin-top: 12px;
   display: flex;
@@ -46,8 +46,8 @@
 }
 
 .invitationurltext {
-  padding-left: 12px;
-  padding-top: 12px;
+  padding-left: 7px;
+  padding-top: 13px;
 }
 
 .invitationurl:hover {

@@ -31,23 +31,10 @@ class ChannelsIndex extends React.Component {
   componentDidMount() { //in future, need to create a subscription for every channel not 1 for the entire channel index
     this.props.fetchServers();
     this.props.fetchChannels();
-    let updateUser = this.props.updateUser.bind(this);
-    App.sub = App.cable.subscriptions.create(
-      { channel: "OnlineChannel", currentUserId: this.props.currentUserId },
-      {
-        received: data => {
-        
-          updateUser(data);
-          }
-        },
-        { extra: () => {} }
-      );
+    
   }
 
-  componentWillUnmount() {
-    App.sub.unsubscribe();
-  }
-
+  
   componentDidUpdate(prevProps) {
     
   if (prevProps.match.params.channelId !== this.props.match.params.channelId) {

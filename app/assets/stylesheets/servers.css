@@ -677,3 +677,107 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.createserveravatar {
+  height: 140px;
+  width: 140px;
+  background-color: #7189da;
+  border-radius: 300px;
+  position: absolute;
+  left: 330px;
+  top: 140px;
+  color: white;
+  font-size: 30px;
+}
+
+.createserveravatar:hover {
+  -webkit-filter: brightness(60%);
+}
+
+.joinserverheading {
+  color: #43b581;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.nonsenseurl {
+  text-align: center;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  color: #7189da;
+  font-weight: 500;  
+  margin-top: 7px;
+}
+
+.spacekiller {
+  height: 30px;
+}
+
+.spacekiller2 {
+  height: 20px;
+}
+
+.joininput {
+  margin-top: 30px;
+  margin-left: 40px;
+  border: 0;
+  border-bottom: 2px solid lightgrey;
+  width: 380px;
+  padding-bottom: 8px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: #87909c;
+}
+
+.joinserverlabel {
+  color: #87909c;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  margin-top: 4px;
+  margin-left: 40px;
+}
+
+.serverbuttoncontainer2 {
+  width: 100%;
+  height: 75px;
+  margin-bottom: 30px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.back2 {
+  color: #99aab5;
+  font-size: 12px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  border: 0;
+  font-weight: 500;
+  height: 75%;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.back2:hover {
+  border-bottom: 2px solid darkgrey;
+}
+
+.joinserver {
+  background-color: #43b581;
+  width: 95px;
+  height: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+  color: white;
+  border-radius: 3px;
+  border-color: #43b581;
+  font-size: 12px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.joinserver:hover {
+  -webkit-filter: brightness(70%);
+}

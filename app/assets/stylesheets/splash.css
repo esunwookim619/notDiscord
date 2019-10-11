@@ -126,6 +126,10 @@ nav {
   z-index: 20;
 }
 
+.nodl:hover {
+  top: 33px;
+}
+
 .noopen {
   background: #7289da;
   border-color: #7289da;
@@ -138,6 +142,10 @@ nav {
   font-weight: 400;
   font-size: 15px;
   z-index: 20;
+}
+
+.noopen:hover {
+  top: 33px;
 }
 
 

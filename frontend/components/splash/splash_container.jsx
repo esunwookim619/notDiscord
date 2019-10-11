@@ -29,9 +29,9 @@ export const SplashContainer = () => {
           <NotDiscordLogo />
             <a className="broken" href="https://github.com/esunwookim619?tab=repositories">Github</a>
             <a className="broken" href="https://www.linkedin.com/in/edward-kim-b47908122">LinkedIn</a>
-            <h3 className="broken">Broken link ⌄</h3>
-            <h3 className="broken">Broken link ⌄</h3>
-            <h3 className="broken">Broken link ⌄</h3>
+            <a className="broken" href="https://www.facebook.com/">Facebook</a>
+            <a className="broken"href="https://behold-aa.herokuapp.com">Behold</a>
+          <a className="broken" href="https://www.instagram.com/">Instagram</a>
           </div>
           <div className="nav_right">
             <GreetingContainer />
@@ -43,7 +43,7 @@ export const SplashContainer = () => {
           <p className="splashmini2">Stop using Discord and try this out instead!</p>
           <div className="buttoncontainer">
           <button className="nodl">Cannot download</button>
-          <button className="noopen">Do not open</button>
+          <button className="noopen">Just click the Login button</button>
           </div>
         </div>
       

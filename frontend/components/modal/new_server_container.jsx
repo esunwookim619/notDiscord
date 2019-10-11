@@ -30,7 +30,9 @@ class NewServer extends React.Component {
             </div>
           </div>
           <JoinServer />
-          <button className="joinmodal">Join a server</button>
+          <button 
+          onClick={() => this.props.openModal('join server')}
+          className="joinmodal">Join a server</button>
         </div>
       </div>
     </div>
