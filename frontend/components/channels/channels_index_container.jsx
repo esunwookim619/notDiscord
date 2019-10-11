@@ -3,13 +3,14 @@ import ChannelsIndex from './channels_index';
 import { fetchChannels, fetchChannel, updateChannel, deleteChannel } from '../../actions/channel_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { fetchServers } from '../../actions/server_actions'; 
-import { updateUser } from '../../actions/user_actions';
+import { updateUser, fetchUsers } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
     const currentServerId = parseInt(ownProps.match.params.serverId)
     const currentChannelId = parseInt(ownProps.match.params.channelId)
 
   return {
+    currentUser: state.entities.users[state.session.id],
     currentUserId: state.session.id,
     currentChannelId: currentChannelId,
     currentServerId: currentServerId,
@@ -21,6 +22,7 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return {
+    // fetchUsers: () => dispatch(fetchUsers()),
     updateUser: (user) => dispatch(updateUser(user)),
     fetchServers: () => dispatch(fetchServers()),
     fetchChannels: () => dispatch(fetchChannels()),
