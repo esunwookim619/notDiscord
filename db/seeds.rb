@@ -41,7 +41,7 @@ f_6 = Friendship.create(self_id: user_4.id, friend_id: demo_user.id)
 demoserver_1_channel = Channel.create(server_id: demoserver_1.id, channel_name: "general")
 demoserver_2_channel = Channel.create(server_id: demoserver_2.id, channel_name: "general")
 
-user_1_server_1 = Server.create(admin_id: user_1.id, server_name: "NO-NOOBS-PLZ")
+user_1_server_1 = Server.create(admin_id: user_1.id, server_name: "NONOOBSPLZ")
 user_1_server_2 = Server.create(admin_id: user_1.id, server_name: "NOSLEEP")
 
 user_1_server_1_channel = Channel.create(server_id: user_1_server_1.id, channel_name: "general")
