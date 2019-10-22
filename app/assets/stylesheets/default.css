@@ -126,3 +126,39 @@ font-size: 14px;
   -webkit-filter: brightness(120%);
   cursor: pointer;
 }
+
+.directmessage {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 22px;
+  left: 160px;
+  bottom: 12px;
+  -webkit-filter: brightness(120%);
+}
+
+.dmenvelope {
+  width: 26px;
+  height: 20px;
+  position: relative;
+  left: 7px;
+  top: 10px;
+}
+
+.dmpersonname {
+  position: relative;
+  left: 25px;
+  top: 15px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.deletedirectmessage {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 22px;
+  left: 180px;
+  bottom: 12px;
+}

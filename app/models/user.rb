@@ -35,13 +35,21 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   class_name: :Message
 
-  # has_many :selfs,
-  # foreign_key: :self_id,
-  # class_name: :Friendship
+  has_many :dmchannels,
+  foreign_key: :user1_id,
+  class_name: :Dmchannel
+
+  has_many :dmchannels,
+  foreign_key: :user2_id,
+  class_name: :Dmchannel
 
   has_many :friends, dependent: :destroy,
   foreign_key: :self_id,
   class_name: :Friendship
+
+  has_many :dms, 
+  foreign_key: :author_id,
+  class_name: :Dm
 
   def inserver
     self.update({online: true})

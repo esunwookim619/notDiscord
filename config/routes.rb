@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :channels, only: [:index, :create, :destroy, :update]
     resources :server_memberships, only: [:index, :create, :destroy, :update]
     resources :messages, only: [:index, :create, :destroy]
+    resources :dmchannels, only: [:index, :create, :destroy]
+    resources :dms, only: [:index, :create, :destroy]
   end
 
   get 'api/servers/:invitation_url', to: 'api/servers#join'

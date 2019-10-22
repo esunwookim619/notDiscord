@@ -10,7 +10,6 @@ class Api::ServersController < ApplicationController
     
     if @server.save
       @server.channels.push(Channel.create({channel_name: "general", server_id: @server.id}))
-      # @server.invitation_url = SecureRandom::urlsafe_base64(4);
       render "/api/servers/show"
     else
       render json: @server.errors.full_messages, status: 404

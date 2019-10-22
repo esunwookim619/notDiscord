@@ -31,7 +31,7 @@
 .avatarandusernamecontainer {
   display: flex;
   flex-direction: row;
-  width: 225px;
+  width: 220px;
   height: 45px;
   border-radius: 4px;
 }

@@ -14,10 +14,6 @@ class Friendship < ApplicationRecord
   foreign_key: :self_id,
   class_name: :User
 
-  # belongs_to :friend,
-  # foreign_key: :friend_id,
-  # class_name: :User
-
   def self.find_by_credentials(self_id, friend_id)
     friendship = Friendship.find_by(self_id: self_id, friend_id: friend_id)
     return nil unless friendship

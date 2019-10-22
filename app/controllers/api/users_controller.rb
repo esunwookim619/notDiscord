@@ -6,7 +6,6 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    # @user.username = @user.email #default
     if @user.save
       login!(@user)
       render "/api/users/show"

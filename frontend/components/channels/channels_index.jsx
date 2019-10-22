@@ -16,7 +16,6 @@ class ChannelsIndex extends React.Component {
     this.pickChannels = this.pickChannels.bind(this);
     this.state = {
       isHovering: false,
-      // toggle: false
     }
     this.MouseHover = this.MouseHover.bind(this);
   }
@@ -31,7 +30,7 @@ class ChannelsIndex extends React.Component {
     this.setState(this.toggleHoverState);
   }
 
-  componentDidMount() { //in future, need to create a subscription for every channel not 1 for the entire channel index
+  componentDidMount() { //Action Cable debt
     this.props.fetchServers();
     this.props.fetchChannels();
   }
@@ -42,15 +41,6 @@ class ChannelsIndex extends React.Component {
   if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
     
     this.props.fetchChannels();
-    // let myprops = this.props;
-    // let serverId = this.props.match.params.serverId;
-    // let channelId = this.props.match.params.channelId;
-    // // this.props.fetchChannels(); this is only a temporary fix
-    // this.props.history.push("/channels/@me")
-    // this.props.fetchChannels().then(() => 
-    // { 
-    //   myprops.history.push(`/channels/${serverId}/${channelId}`)});
-    // } 
   }
   }
 
@@ -63,7 +53,7 @@ class ChannelsIndex extends React.Component {
       return ownchannels;
   }
   render() {
-    const first = this.pickChannels(this.props.channels)[0]; //doesn't work if you delete the first channel for pushing
+    const first = this.pickChannels(this.props.channels)[0]; 
     const pickedc = this.pickChannels(this.props.channels);
   
     
@@ -111,7 +101,7 @@ class ChannelsIndex extends React.Component {
 
 
           </div>
-          {/* chat room container was here */}
+          
           <OnlineListContainer server={currentServer} />
           <ChatRoomContainer props={this.props} channels={this.props.channels} />
         </div>

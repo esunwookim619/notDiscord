@@ -2,13 +2,10 @@ import React from 'react';
 import MessageForm from './MessageForm';
 import { receiveMessage } from '../../actions/message_actions';
 import Logo from '../servers/logo';
-// import GarbageCan from './garbagecan';
-
 
 class ChatRoom extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = { messages: [] };
    
     this.bottom = React.createRef();
     this.getChannelName = this.getChannelName.bind(this);

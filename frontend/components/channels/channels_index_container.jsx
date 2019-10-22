@@ -16,13 +16,12 @@ const msp = (state, ownProps) => {
     currentServerId: currentServerId,
     channels: Object.values(state.entities.channels),
     servers: Object.values(state.entities.servers),
-    currentServer: state.entities.servers[currentServerId] // try this method to fix problem
+    currentServer: state.entities.servers[currentServerId] 
   };
 };
 
 const mdp = dispatch => {
   return {
-    // fetchUsers: () => dispatch(fetchUsers()),
     updateUser: (user) => dispatch(updateUser(user)),
     fetchServers: () => dispatch(fetchServers()),
     fetchChannels: () => dispatch(fetchChannels()),

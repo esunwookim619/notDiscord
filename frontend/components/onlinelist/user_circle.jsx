@@ -5,7 +5,6 @@ import Offline from './offline';
 class UserCircle extends React.Component {
   constructor(props) {
     super(props);
-    // this.bottom = React.createRef();
   }
 
 

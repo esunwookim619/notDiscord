@@ -9,23 +9,37 @@ import Online from './onlinelist/online';
  class Default extends React.Component {
    constructor(props) {
      super(props)
+     this.getDmchannelName = this.getDmchannelName.bind(this);
+     this.currentUser = this.currentUser.bind(this);
+     this.state = {
+       isHovering: false,
+     }
+     this.MouseHover = this.MouseHover.bind(this);
    }
 
+   toggleHoverState(state) {
+     return {
+       isHovering: !state.isHovering,
+     };
+   }
+
+   MouseHover() {
+     this.setState(this.toggleHoverState);
+   }
 
    componentDidMount() {
      this.props.fetchUsers();
+     this.props.fetchDmchannels();
      let updateUser = this.props.updateUser.bind(this);
      App.sub = App.cable.subscriptions.create(
        { channel: "OnlineChannel", currentUserId: this.props.currentUserId },
        {
          received: data => {
-
            updateUser(data);
          }
        },
        { extra: () => { } }
      );
-   
    }
 
    componentWillUnmount() {
@@ -43,6 +57,29 @@ import Online from './onlinelist/online';
     return currentUser;
   }
 
+  getDmchannelName(dmchannel) {
+    let currentUser = this.currentUser();
+    let user1 = [];
+    let user2 = [];
+    let username1;
+    let username2;
+    if (this.props.users.length > 0) {
+      user1 = this.props.users.filter(user => user.id === dmchannel.user1_id);
+      user2 = this.props.users.filter(user => user.id === dmchannel.user2_id);
+      if (user1.length > 0 && user2.length > 0) {
+        username1 = user1[0].username;
+        username2 = user2[0].username;
+      }
+      if (user1.length > 0 && currentUser.length > 0) {
+        if (currentUser[0].id === user1[0].id) {
+          return username2;
+        } else {
+          return username1;
+        }
+      }
+    }
+  }
+
   getFriends(user) {
     if (user.length > 0) {
       return this.props.users.filter(friend => user[0].friends.includes(friend.id))
@@ -51,6 +88,15 @@ import Online from './onlinelist/online';
     }
   }
 
+  getDmchannels() {
+    let currentUserId = this.props.currentUserId;
+    let dmchannels = this.props.dmchannels;
+    if (dmchannels.length > 0) {
+      return dmchannels.filter(dmchannel => dmchannel.user1_id === currentUserId || dmchannel.user2_id === currentUserId); 
+    } else {
+      return [];
+    }
+  }
 
    render() {
      let friends = this.getFriends(this.currentUser());
@@ -67,7 +113,27 @@ import Online from './onlinelist/online';
          )
        })
      }
-
+     let dmchannels = this.getDmchannels();
+     let dmchannelsitems;
+        if (dmchannels.length > 0) {
+          dmchannelsitems = dmchannels.map(dmchannel => {
+            return (
+              <div className="avatarandusernamecontainer" key={dmchannel.id}
+                onMouseEnter={this.MouseHover}
+                onMouseLeave={this.MouseHover}
+                onClick={() => {
+                  this.MouseHover();
+                  this.props.history.push(`/channels/@me/${dmchannel.id}`)}}>
+                <img className="dmenvelope" src={window.message}></img>
+                <div className="dmpersonname">{this.getDmchannelName(dmchannel)}</div>
+                {this.state.isHovering && <img className="deletedirectmessage" 
+                onClick={() => this.props.deleteDmchannel(dmchannel.id)
+                  .then(() => this.props.history.push(`/channels/@me`))}
+                src={window.deletemessage}></img>}
+              </div>
+            )
+          })
+        }
      return (
        <div>
          <div className="chattopbar" />
@@ -78,6 +144,13 @@ import Online from './onlinelist/online';
            <div className="onlinelistheading">Friends</div>
            <ul>
              {friendsitems}
+           </ul>
+           </div>
+
+           <div className="friendslist">
+           <div className="onlinelistheading">Direct Messages</div>
+           <ul>
+              {dmchannelsitems}
            </ul>
            </div>
 

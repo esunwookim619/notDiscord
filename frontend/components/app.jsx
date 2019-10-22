@@ -8,6 +8,7 @@ import { SplashContainer } from "./splash/splash_container";
 import DefaultContainer from "./default_container";
 import ChannelsIndexContainer from "./channels/channels_index_container";
 import InviteContainer from './servers/invite_container';
+import DmChatContainer from './dms/dm_chat_container';
 
 import Modal from "./modal/modal";
 
@@ -15,11 +16,10 @@ const App = () => (
   <>
     <Modal />
     <ProtectedRoute path="/channels/" component={DefaultContainer} /> 
+    <ProtectedRoute path="/channels/@me/:dmchannelId" component={DmChatContainer} />
     <Switch>
-      
       <ProtectedRoute exact path="/servers/invite/:invitationUrl" component={InviteContainer} />
-      <ProtectedRoute path="/channels/:serverId/:channelId" component={ChannelsIndexContainer} />
-      
+      <ProtectedRoute path="/channels/:serverId/:channelId" component={ChannelsIndexContainer} /> 
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
     </Switch>
@@ -29,4 +29,3 @@ const App = () => (
 
 export default App;
 
-//make sure i can't get to /@me without being logged in (Protected Route)

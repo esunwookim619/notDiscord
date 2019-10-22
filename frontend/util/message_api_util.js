@@ -1,5 +1,4 @@
 export const fetchMessages = () => {
-
   return $.ajax({
     method: "GET",
     url: "api/messages",
@@ -13,8 +12,6 @@ export const createMessage = message => (
     data: { message }
   })
 );
-
-
 
 export const deleteMessage = id => (
   $.ajax({

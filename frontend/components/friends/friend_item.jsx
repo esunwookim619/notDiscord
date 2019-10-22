@@ -20,7 +20,9 @@ class FriendItem extends React.Component {
   }
   render() {
     let friendId = this.props.user.id;
-   
+    let dmchannel_name = this.props.user.username;
+    let user1_id = this.props.currentUserId;
+    let user2_id = friendId;
     return (
       <div
         onMouseEnter={this.MouseHover}
@@ -29,6 +31,12 @@ class FriendItem extends React.Component {
         {this.state.isHovering && <img
           onClick={() => this.props.deleteFriend(friendId)}
           className="addfriend" src={window.deletefriend} />}
+        {this.state.isHovering && <img
+          onClick={() => this.props.createDmchannel({ dmchannel_name: dmchannel_name, 
+            user1_id: user1_id, user2_id: user2_id })
+            .then((dmchannel) => {
+              this.props.history.push(`/channels/@me/${dmchannel.dmchannel.id}`)})}
+          className="directmessage" src={window.message} />}
       </div>
     )
   }
