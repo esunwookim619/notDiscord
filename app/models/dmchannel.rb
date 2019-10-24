@@ -11,6 +11,7 @@
 #
 
 class Dmchannel < ApplicationRecord
+  validates_uniqueness_of :user1_id, :scope => [:user2_id]
 
   belongs_to :user1,
   foreign_key: :user1_id,

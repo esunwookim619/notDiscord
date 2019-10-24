@@ -25,9 +25,16 @@ class DmMessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let currentdmchannel = this.props.currentdmchannel;
+    let receiver_id;
+    if (currentdmchannel[0].user1_id === this.currentUserId) {
+      receiver_id = currentdmchannel[0].user2_id;
+    } else {
+      receiver_id = currentdmchannel[0].user1_id;
+    }
     let sub = this.findSub(App.cable.subscriptions.subscriptions);
   
-    sub.speak({ body: this.state.body, dmchannel_id: this.props.props.match.params.dmchannelId, author_id: this.currentUserId });
+    sub.speak({ body: this.state.body, dmchannel_id: this.props.props.match.params.dmchannelId, author_id: this.currentUserId, receiver_id: receiver_id });
     this.setState({ body: "" });
   }
 

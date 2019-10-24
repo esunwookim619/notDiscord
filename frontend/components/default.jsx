@@ -30,12 +30,14 @@ import Online from './onlinelist/online';
    componentDidMount() {
      this.props.fetchUsers();
      this.props.fetchDmchannels();
+     let fetchDmchannels = this.props.fetchDmchannels.bind(this);
      let updateUser = this.props.updateUser.bind(this);
      App.sub = App.cable.subscriptions.create(
        { channel: "OnlineChannel", currentUserId: this.props.currentUserId },
        {
          received: data => {
            updateUser(data);
+           fetchDmchannels();
          }
        },
        { extra: () => { } }
@@ -101,7 +103,7 @@ import Online from './onlinelist/online';
    render() {
      let friends = this.getFriends(this.currentUser());
      let friendsitems;
-   
+     
      if (friends.length > 0) {
        friendsitems = friends.map(friend => {
          return (

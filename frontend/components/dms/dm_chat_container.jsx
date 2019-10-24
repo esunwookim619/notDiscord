@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Dmchat from './dm_chat';
 import { fetchDms, deleteDm, createDm, receiveDm } from '../../actions/dm_actions';
 import { withRouter } from 'react-router-dom';
-import { fetchUsers } from '../../actions/user_actions';
+import { fetchUsers, updateUser } from '../../actions/user_actions';
 import { fetchDmchannels } from '../../actions/dmchannel_actions';
 
 const msp = (state, ownProps) => {
@@ -20,6 +20,7 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return {
+    updateUser: (user) => dispatch(updateUser(user)),
     fetchDmchannels: () => dispatch(fetchDmchannels()),
     fetchUsers: () => dispatch(fetchUsers()),
     receiveDm: (dm) => dispatch(receiveDm(dm)),

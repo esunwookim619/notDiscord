@@ -9,7 +9,8 @@ const msp = (state) => {
   return {
     currentUserId: state.session.id,
     users: Object.values(state.entities.users),
-    dmchannels: Object.values(state.entities.dmchannels)
+    dmchannels: Object.values(state.entities.dmchannels),
+
   };
 };
 

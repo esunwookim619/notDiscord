@@ -47,8 +47,12 @@ class User < ApplicationRecord
   foreign_key: :self_id,
   class_name: :Friendship
 
-  has_many :dms, 
+  has_many :sent_dms, 
   foreign_key: :author_id,
+  class_name: :Dm
+
+  has_many :received_dms,
+  foreign_key: :receiver_id,
   class_name: :Dm
 
   def inserver
