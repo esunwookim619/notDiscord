@@ -199,3 +199,14 @@
   top: 11px;
   left: 19px;
 }
+
+.deletedmicon {
+  position: absolute;
+  height: 20px;
+  right: 20px;
+  top: 25px;
+}
+
+.deletedmicon:hover {
+  cursor: pointer;
+}

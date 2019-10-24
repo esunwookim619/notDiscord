@@ -10,7 +10,22 @@ class DmChat extends React.Component {
     this.getDmchannelName = this.getDmchannelName.bind(this);
     this.findUser = this.findUser.bind(this);
     this.findReceiver = this.findReceiver.bind(this);
+    this.state = {
+      isHovering: false,
+    }
+    this.MouseHover = this.MouseHover.bind(this);
   }
+
+  toggleHoverState(state) {
+    return {
+      isHovering: !state.isHovering,
+    };
+  }
+
+  MouseHover() {
+    this.setState(this.toggleHoverState);
+  }
+
 
   componentDidMount() {
     let receiveDm = this.props.receiveDm.bind(this);
@@ -28,6 +43,9 @@ class DmChat extends React.Component {
         },
         speak: function (data) {
           return this.perform("speak", data);
+        },
+        delete: function (data) {
+          return this.perform("delete", data);
         }
       }
     );
@@ -64,7 +82,8 @@ class DmChat extends React.Component {
 
   componentDidUpdate(prevProps) {
     let myDms = this.myDms();
-    if (myDms.length > 0) {
+    
+    if (myDms.length > 0 && (prevProps.dms.length !== this.props.dms.length)) {
       this.bottom.current.scrollIntoView();
     }
   }
@@ -104,7 +123,7 @@ class DmChat extends React.Component {
   }
 
   render() {
-    let dmList;
+    let dmList = [];
     let currentdmchannel = [];
     if (this.props.dmchannels.length > 0) {
       currentdmchannel = this.props.dmchannels.filter(dmchannel => dmchannel.id === this.props.currentdmchannelId)
@@ -119,12 +138,19 @@ class DmChat extends React.Component {
 
         return (
           <li key={dm.id}
-            className="individualmessagecontainer">
+            className="individualmessagecontainer"
+            onMouseEnter={this.MouseHover}
+            onMouseLeave={this.MouseHover}>
             <div className="buttonandmessage">
               <button className="messageavatar"><Logo /></button>
               <div className="usernameandmessage">
                 <div className="usernameinmessage">{username} <div className="createdat">{dm.created_at}</div></div>
                 <div className="individualmessage">{dm.body}</div>
+                {/* {this.state.isHovering && <img className="deletedmicon"
+                  onClick={() => {
+                    this.MouseHover();
+                    this.props.deleteDm(dm.id)}}
+                  src={window.deletemessage}></img>} */}
               </div>
 
             </div>
@@ -133,6 +159,10 @@ class DmChat extends React.Component {
           </li>
         );
       });
+    }
+    if (dmList.length > 50) {
+      let length = dmList.length;
+      dmList = dmList.slice(length - 50);
     }
     return (
       <div>

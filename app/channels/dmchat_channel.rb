@@ -16,7 +16,6 @@ class DmchatChannel < ApplicationCable::Channel
     OnlineChannel.broadcast_to('online_channel', socket2)
   end
 
-  
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed

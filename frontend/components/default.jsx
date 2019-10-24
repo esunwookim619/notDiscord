@@ -13,9 +13,29 @@ import Online from './onlinelist/online';
      this.currentUser = this.currentUser.bind(this);
      this.state = {
        isHovering: false,
+       dmClassName:"avatarandusernamecontainer" //
      }
      this.MouseHover = this.MouseHover.bind(this);
+    //  this.handleClick = this.handleClick.bind(this);
    }
+
+  //  handleClick() {
+  //    this.setState(this.toggleClassName);
+
+  //  }
+
+  //  toggleClassName(state) {
+  //    this.props.history.push(`/channels/@me`);
+  //   if (state.dmClassName === "avatarandusernamecontainer") {
+  //     return {
+  //       dmClassName: "invis",
+  //     };
+  //   } else {
+  //     return {
+  //       dmClassName: "avatarandusernamecontainer",
+  //     };
+  //   }
+  //  }
 
    toggleHoverState(state) {
      return {
@@ -120,7 +140,7 @@ import Online from './onlinelist/online';
         if (dmchannels.length > 0) {
           dmchannelsitems = dmchannels.map(dmchannel => {
             return (
-              <div className="avatarandusernamecontainer" key={dmchannel.id}
+              <div className={this.state.dmClassName} key={dmchannel.id}
                 onMouseEnter={this.MouseHover}
                 onMouseLeave={this.MouseHover}
                 onClick={() => {
@@ -131,6 +151,7 @@ import Online from './onlinelist/online';
                 {this.state.isHovering && <img className="deletedirectmessage" 
                 onClick={() => this.props.deleteDmchannel(dmchannel.id)
                   .then(() => this.props.history.push(`/channels/@me`))}
+                  // onClick={this.handleClick}
                 src={window.deletemessage}></img>}
               </div>
             )
