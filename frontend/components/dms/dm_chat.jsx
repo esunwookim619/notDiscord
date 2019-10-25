@@ -33,20 +33,23 @@ class DmChat extends React.Component {
     this.props.fetchDms();
     this.props.fetchUsers();
     this.props.fetchDmchannels();
+   
     App.cable.subscriptions.create(
-      { channel: "DmchatChannel", currentdmchannelId: this.props.currentdmchannelId },
+      { channel: "DmchatChannel", currentdmchannelId: this.props.match.params.dmchannelId },
       {
         received: data => {
-          receiveDm(data);
-          // let user = this.findReceiver(data);
-          // updateUser(user[0]);
+          if (data.id) {
+            receiveDm(data);
+          } else {
+            window.alert("This chatroom no longer exists. Please refresh the page.");
+          }
         },
         speak: function (data) {
           return this.perform("speak", data);
         },
-        delete: function (data) {
-          return this.perform("delete", data);
-        }
+        // delete: function (data) {
+        //   return this.perform("delete", data);
+        // }
       }
     );
   }

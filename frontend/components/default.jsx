@@ -17,6 +17,7 @@ import Online from './onlinelist/online';
      }
      this.MouseHover = this.MouseHover.bind(this);
     //  this.handleClick = this.handleClick.bind(this);
+     this.findSub = this.findSub.bind(this);
    }
 
   //  handleClick() {
@@ -41,6 +42,14 @@ import Online from './onlinelist/online';
      return {
        isHovering: !state.isHovering,
      };
+   }
+
+   findSub(arr) {
+     for (let i = 0; i < arr.length; i++) {
+       if (arr[i].identifier[12] === "D") {
+         return arr[i];
+       }
+     }
    }
 
    MouseHover() {
@@ -150,7 +159,13 @@ import Online from './onlinelist/online';
                 <div className="dmpersonname">{this.getDmchannelName(dmchannel)}</div>
                 {this.state.isHovering && <img className="deletedirectmessage" 
                 onClick={() => this.props.deleteDmchannel(dmchannel.id)
-                  .then(() => this.props.history.push(`/channels/@me`))}
+                  .then(() => this.props.history.push(`/channels/@me`))
+                  .then(() => {
+              
+                    let subs = this.findSub(App.cable.subscriptions.subscriptions);
+                    
+                    subs.unsubscribe();
+                  })}
                   // onClick={this.handleClick}
                 src={window.deletemessage}></img>}
               </div>
