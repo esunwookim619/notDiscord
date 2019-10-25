@@ -47,9 +47,6 @@ class DmChat extends React.Component {
         speak: function (data) {
           return this.perform("speak", data);
         },
-        // delete: function (data) {
-        //   return this.perform("delete", data);
-        // }
       }
     );
   }
@@ -105,7 +102,6 @@ class DmChat extends React.Component {
     if (this.props.dmchannels.length > 0) {
       dmchannel = this.props.dmchannels.filter(dmchannel => dmchannel.id === currentdmchannelId);
       if (dmchannel[0]) {
-        // return dmchannel[0].dmchannel_name;
         if (this.props.users.length > 0) {
           user1 = this.props.users.filter(user => user.id === dmchannel[0].user1_id);
           user2 = this.props.users.filter(user => user.id === dmchannel[0].user2_id);

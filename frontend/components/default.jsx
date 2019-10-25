@@ -16,27 +16,8 @@ import Online from './onlinelist/online';
        dmClassName:"avatarandusernamecontainer" //
      }
      this.MouseHover = this.MouseHover.bind(this);
-    //  this.handleClick = this.handleClick.bind(this);
      this.findSub = this.findSub.bind(this);
    }
-
-  //  handleClick() {
-  //    this.setState(this.toggleClassName);
-
-  //  }
-
-  //  toggleClassName(state) {
-  //    this.props.history.push(`/channels/@me`);
-  //   if (state.dmClassName === "avatarandusernamecontainer") {
-  //     return {
-  //       dmClassName: "invis",
-  //     };
-  //   } else {
-  //     return {
-  //       dmClassName: "avatarandusernamecontainer",
-  //     };
-  //   }
-  //  }
 
    toggleHoverState(state) {
      return {
@@ -166,7 +147,6 @@ import Online from './onlinelist/online';
                     
                     subs.unsubscribe();
                   })}
-                  // onClick={this.handleClick}
                 src={window.deletemessage}></img>}
               </div>
             )
