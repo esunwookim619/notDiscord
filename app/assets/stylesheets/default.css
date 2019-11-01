@@ -162,3 +162,22 @@ font-size: 14px;
   left: 180px;
   bottom: 12px;
 }
+
+.loading-background {
+  position: absolute;
+  z-index: 50;
+  height: 1000px;
+  width: 100%;
+  background-color: #282b30;
+}
+
+.loading-container {
+  position: fixed;
+  left: 40%;
+  top: 25%;
+}
+
+.loading {
+
+}
+
