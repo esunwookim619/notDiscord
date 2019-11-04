@@ -33,11 +33,11 @@ class OnlineList extends React.Component {
       users = this.pickUsers();
     }
     if (users.length > 0) {
-      
+      let colors = ["red", "yellow", "green", "grey", "purple"];
       myusers = users.map(user => {
         return (
           <div className="avatarandusernamecontainer" key={user.id}>
-          <div className="logobackgroundonline"><Logo num="1" /></div>
+            <div className={`logobackgroundonline ${colors[(Math.round(Math.random() * 4))]}`}><Logo num="1" /></div>
           <UserCircleContainer user={user}/>
           <UserItemContainer user={user} />
           </div>

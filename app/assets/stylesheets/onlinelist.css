@@ -44,13 +44,36 @@
 }
 
 .logobackgroundonline {
-  border-color: #faa619;
-  background-color: #faa619;
   height: 32px;
   width: 32px;
   border-radius: 32px;
   margin-left: 5px;
   margin-top: 7px;
+}
+
+.red {
+  background-color: #f04747;
+  border-color: #f04747;
+}
+
+.yellow {
+  border-color: #faa619;
+  background-color: #faa619;
+}
+
+.green {
+  border-color: #43b581;
+  background-color: #43b581;
+}
+
+.grey {
+  border-color: #747f8d;
+  background-color: #747f8d;
+}
+
+.purple {
+  border-color: #7389da;
+  background-color: #7389da;
 }
 
 .logo1 {

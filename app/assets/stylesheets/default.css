@@ -21,20 +21,24 @@
   justify-content: center;
 }
 
+.wumpus-container {
+  position: absolute;
+  top: 30%;
+}
+
 .wumpus {
   z-index: 1;
 }
 
 .wumpuscaption {
-  /* display: none; */
- color: #b9bbbe;
- height: 20px;
- position: absolute;
- top: 66%;
- right: 43.5%;
- font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
-font-weight: 400;
-font-size: 14px;
+  color: #b9bbbe;
+  height: 20px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  position: relative;
+  left: 120px;
+  top: 20px;
 }
 
 .leftsearchbarcontainer {
@@ -177,7 +181,13 @@ font-size: 14px;
   top: 25%;
 }
 
-.loading {
-
+.searched-users {
+  position: absolute;
+  z-index: 999;
+  left: 8px;
+  top: 50px;
+  background-color: #18191c;
+  box-shadow: 0 16px 40px black;
+  color: #8e9291;
+  border-radius: 4px;
 }
-

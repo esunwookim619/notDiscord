@@ -6,6 +6,10 @@ import FriendItemContainer from './friends/friend_item_container';
 import Logo from './servers/logo';
 import Online from './onlinelist/online';
 
+import UserItemContainer from './onlinelist/user_item_container';
+
+
+
  class Default extends React.Component {
    constructor(props) {
      super(props)
@@ -13,14 +17,11 @@ import Online from './onlinelist/online';
      this.currentUser = this.currentUser.bind(this);
      this.state = {
        isHovering: false,
-       dmClassName:"avatarandusernamecontainer" //
+       dmClassName:"avatarandusernamecontainer", 
+       searchInput: "",
      }
      this.MouseHover = this.MouseHover.bind(this);
      this.findSub = this.findSub.bind(this);
-   }
-
-   componentWillMount() {
-     this.props.startLoad();
    }
 
    toggleHoverState(state) {
@@ -42,6 +43,7 @@ import Online from './onlinelist/online';
    }
 
    componentDidMount() {
+     this.props.startLoad();
      this.props.fetchUsers();
      this.props.fetchDmchannels();
      let fetchDmchannels = this.props.fetchDmchannels.bind(this);
@@ -117,6 +119,23 @@ import Online from './onlinelist/online';
     }
   }
 
+  update(field) {
+    return (e) => {
+      this.setState({ [field]: e.target.value });
+    };
+  }
+
+  searchUsers() {
+    let currentUser = this.currentUser();
+    let searchInput = this.state.searchInput;
+    let searchedUsers = [];
+    if (this.props.users.length > 0) {
+      searchedUsers = this.props.users.filter(user => user.username.includes(searchInput) && searchInput !== "" && user.username !== currentUser[0].username)
+    }
+    return searchedUsers;
+  }
+
+
    render() {
      let friends = this.getFriends(this.currentUser());
      let friendsitems;
@@ -149,9 +168,7 @@ import Online from './onlinelist/online';
                 onClick={() => this.props.deleteDmchannel(dmchannel.id)
                   .then(() => this.props.history.push(`/channels/@me`))
                   .then(() => {
-              
                     let subs = this.findSub(App.cable.subscriptions.subscriptions);
-                    
                     subs.unsubscribe();
                   })}
                 src={window.deletemessage}></img>}
@@ -160,12 +177,35 @@ import Online from './onlinelist/online';
           })
         }
       if ( this.props.loading === false ) {
+        let listUsers;
+        let searchedUsers = this.searchUsers();
+        if (searchedUsers.length > 0) {
+          listUsers = searchedUsers.map(user => {
+            return (
+              <div className="avatarandusernamecontainer" key={user.id}>
+                <div className="logobackgroundonline"><Logo num="1" /></div>
+                <UserCircleContainer user={user} />
+                <UserItemContainer user={user} />
+              </div>
+            );
+          });
+        } else {
+          listUsers = null;
+        }
         return (
           <div>
             <div className="chattopbar" />
             <ServersContainer />
             <div className="leftbar">
-              <div className="leftsearchbarcontainer"><input className="leftsearchbar" placeholder="Find or start a conversation" type="text" /></div>
+              <div className="leftsearchbarcontainer"><input 
+              className="leftsearchbar" placeholder="Find or start a conversation" type="text" 
+              value={this.state.searchInput} onChange={this.update("searchInput")}/>
+              <div className="searched-users">
+                <ul>
+                  {listUsers}
+                </ul>
+              </div>
+              </div>
               <div className="friendslist">
                 <div className="onlinelistheading">Friends</div>
                 <ul>
@@ -187,8 +227,10 @@ import Online from './onlinelist/online';
               </div>
             </div>
             <div className="rightside">
+              <div className="wumpus-container">
               <Wumpus />
               <div className="wumpuscaption">Shhhh! Wumpus is sleeping!</div>
+              </div>
             </div>
           </div>
         )
