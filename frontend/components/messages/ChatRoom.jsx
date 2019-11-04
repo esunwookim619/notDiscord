@@ -82,16 +82,18 @@ class ChatRoom extends React.Component {
     if (myMsgs.length > 0) {
       messageList = myMsgs.map(message => {
         let username;
+        let color;
         if (this.findUser(message)[0]) {
           
-          username = this.findUser(message)[0].username
+          username = this.findUser(message)[0].username;
+          color = this.findUser(message)[0].avatar_color;
         }
-        let colors = ["red", "yellow", "green", "grey", "purple"];
+        // let colors = ["red", "yellow", "green", "grey", "purple"];
         return (
           <li key={message.id}
             className="individualmessagecontainer">
             <div className="buttonandmessage">
-              <button className={`messageavatar ${colors[(Math.round(Math.random() * 4))]}`}><Logo /></button> 
+              <button className={`messageavatar ${color}`}><Logo /></button> 
             <div className="usernameandmessage">
                 <div className="usernameinmessage">{username} <div className="createdat">{message.created_at}</div></div>
               <div className="individualmessage">{message.body}</div>

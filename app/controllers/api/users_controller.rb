@@ -6,6 +6,8 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    colors = ["red", "yellow", "green", "grey", "purple"]
+    @user.avatar_color = colors[rand(5)]
     if @user.save
       login!(@user)
       render "/api/users/show"
@@ -53,7 +55,7 @@ class Api::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :username, :online)
+    params.require(:user).permit(:email, :password, :username, :online, :avatar_color)
   end
   
 end

@@ -91,7 +91,7 @@ class ChannelsIndex extends React.Component {
 
 
             <div className="defaultusernamebar">
-              <div className="logobackgroundonline3"><Logo num="3" /></div>
+              <div className={`logobackgroundonline3 ${this.props.currentUser.avatar_color}`}><Logo num="3" /></div>
               <div className="onlineindicator3"><Online /></div>
               <div className="currentuserusername">{this.props.currentUser.username}</div>
               <svg onClick={() => this.props.props.openModal('edit channel')}

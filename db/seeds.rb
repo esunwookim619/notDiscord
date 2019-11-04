@@ -13,12 +13,14 @@ Channel.destroy_all
 Message.destroy_all
 Friendship.destroy_all
 
-demo_user = User.create(email: "demo@gmail.com", password: "password", username: "DemoUser")
+colors = ["red", "yellow", "green", "grey", "purple"]
 
-user_1 = User.create(email: "email@gmail.com", password: "password", username: "noobslayerz")
-user_2 = User.create(email: "user2@gmail.com", password: "password", username: "Discordcritic")
-user_3 = User.create(email: "user3@gmail.com", password: "password", username: "bestMidNA")
-user_4 = User.create(email: "user4@gmail.com", password: "password", username: "ConnorAATA")
+demo_user = User.create(email: "demo@gmail.com", password: "password", username: "DemoUser", avatar_color: colors[rand(5)])
+
+user_1 = User.create(email: "email@gmail.com", password: "password", username: "noobslayerz", avatar_color: colors[rand(5)])
+user_2 = User.create(email: "user2@gmail.com", password: "password", username: "Discordcritic", avatar_color: colors[rand(5)])
+user_3 = User.create(email: "user3@gmail.com", password: "password", username: "bestMidNA", avatar_color: colors[rand(5)])
+user_4 = User.create(email: "user4@gmail.com", password: "password", username: "ConnorAATA", avatar_color: colors[rand(5)])
 
 
 

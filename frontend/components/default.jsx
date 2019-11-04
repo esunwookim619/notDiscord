@@ -144,7 +144,7 @@ import UserItemContainer from './onlinelist/user_item_container';
        friendsitems = friends.map(friend => {
          return (
            <div className="avatarandusernamecontainer" key={friend.id}>
-             <div className="logobackgroundonline"><Logo num="1" /></div>
+             <div className={`logobackgroundonline ${friend.avatar_color}`}><Logo num="1" /></div>
              <UserCircleContainer user={friend} />
              <FriendItemContainer user={friend} />
            </div>
@@ -219,7 +219,7 @@ import UserItemContainer from './onlinelist/user_item_container';
                 </ul>
               </div>
               <div className="defaultusernamebar">
-                <div className="logobackgroundonline3"><Logo num="3" /></div>
+                <div className={`logobackgroundonline3 ${this.currentUser()[0].avatar_color}`}><Logo num="3" /></div>
                 <div className="onlineindicator3"><Online /></div>
                 <div className="currentuserusername">{this.currentUser()[0].username}</div>
                 <svg onClick={() => this.props.props.openModal('edit channel')}
