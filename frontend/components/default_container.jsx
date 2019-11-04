@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { fetchUsers, updateUser, deleteFriend } from '../actions/user_actions';
 import { fetchDmchannels, deleteDmchannel } from '../actions/dmchannel_actions';
 import { startLoad, stopLoad } from '../actions/session_actions';
+import { openModal, closeModal } from '../actions/modal_actions';
 
 const msp = (state) => {
   return {
@@ -23,6 +24,8 @@ const mdp = dispatch => {
     deleteDmchannel: (id) => dispatch(deleteDmchannel(id)),
     startLoad: () => dispatch(startLoad()),
     stopLoad: () => dispatch(stopLoad()),
+    openModal: (str) => dispatch(openModal(str)),
+    closeModal: () => dispatch(closeModal()),
   };
 };
 

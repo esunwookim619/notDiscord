@@ -58,8 +58,6 @@ class Servers extends React.Component {
           <button className="addbutton" onClick={() => this.props.openModal('new server')}>+</button>
         </ul>
         </div>
-       
-
         <button className="logout" onClick={this.loggingOut}><Logout /></button> 
 
       </div>

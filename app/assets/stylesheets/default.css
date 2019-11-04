@@ -119,8 +119,8 @@
 }
 
 .usergear {
-  position: relative;
-  left: 70px;
+  position: absolute;
+  left: 205px;
   top: 16px; 
 }
 

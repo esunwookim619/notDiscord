@@ -30,7 +30,6 @@ const mdp = dispatch => {
     deleteChannel: (id) => dispatch(deleteChannel(id)),
     openModal: (str) => dispatch(openModal(str)),
     closeModal: () => dispatch(closeModal()),
-   
   };
 };
 
