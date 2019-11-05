@@ -20,11 +20,15 @@ class UserItem extends React.Component {
   }
   render() {
     let friendId = this.props.user.id;
+    let username = this.props.user.username;
+    if (username.length > 12) {
+      username = username.slice(0,11) + "...";
+    }
     return (
       <div 
       onMouseEnter={this.MouseHover}
       onMouseLeave={this.MouseHover}
-      className="onlinelistusername">{this.props.user.username}
+      className="onlinelistusername">{username}
         {this.state.isHovering && this.props.user.id !== this.props.currentUserId && <img 
         onClick={() => this.props.makeFriend(friendId)}
         className="addfriend" src={window.addfriend} />}

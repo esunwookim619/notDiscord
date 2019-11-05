@@ -108,6 +108,8 @@
    display: flex;
    flex-direction: row;
    width: 70%;
+   overflow: hidden;
+   text-overflow: ellipsis;
 }
 
 .addfriend {

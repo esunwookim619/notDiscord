@@ -27,6 +27,9 @@
 
 .channelservername {
   padding: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 210px;
 }
 
 .textchannels {
@@ -103,6 +106,10 @@
 .channametext {
   font-size: 15px;
   padding: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 150px;
+  text-align: left;
 }
 
 .createchannelform {

@@ -47,7 +47,9 @@ class Servers extends React.Component {
          
       ))
     } 
-   
+    if (servers.length > 11) {
+      servers = servers.slice(Math.max(servers.length - 11, 1));
+    }
     return (
       <div className="serverindex">
         

@@ -7,7 +7,6 @@
     }
   }
 
-  
   /* @keyframes slidefromright {
     from {
       margin-left: 70%;
@@ -38,8 +37,6 @@
   background-color: #202225;
   display: flex;
   flex-direction: column;
-  
- 
 }
 
 /* .serverindex::-webkit-scrollbar {width: 0}
@@ -49,6 +46,7 @@
   overflow-y: scroll;
   max-height: 710px;
 }
+
 .serverulcontainer::-webkit-scrollbar {
   width: 0;
 }
@@ -282,7 +280,6 @@
   align-self: center;
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 18px;
-  
 }
 
 .serverbuttonserver:hover {
@@ -301,7 +298,6 @@
 
 .sName {
   height: 21px;  
-  
   background-color: black;
   display: inline-block;
   font-size: 15px;

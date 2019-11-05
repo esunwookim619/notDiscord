@@ -116,6 +116,9 @@
   font-size: 13px;
   font-weight: 600;
   margin-top: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 140px;
 }
 
 .usergear {
@@ -154,6 +157,9 @@
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 15px;
   font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 115px;
 }
 
 .deletedirectmessage {

@@ -23,11 +23,15 @@ class FriendItem extends React.Component {
     let dmchannel_name = this.props.user.username;
     let user1_id = this.props.currentUserId;
     let user2_id = friendId;
+    let username = this.props.user.username;
+    if (username.length > 12) {
+      username = username.slice(0,11) + "...";
+    }
     return (
       <div
         onMouseEnter={this.MouseHover}
         onMouseLeave={this.MouseHover}
-        className="onlinelistusername">{this.props.user.username}
+        className="onlinelistusername">{username}
         {this.state.isHovering && <img
           onClick={() => this.props.deleteFriend(friendId)}
           className="addfriend" src={window.deletefriend} />}

@@ -49,6 +49,7 @@ export const SplashContainer = () => {
       
         <div className="electronics">
           <div className="aic">
+            <Potion />
             <Android />
             <Iphone />
             <Controller />
@@ -61,7 +62,7 @@ export const SplashContainer = () => {
             <Weight />
           </div>
        
-        
+        <div className="extra-container">
         <Bomb />
         
         <Coin num="1" />
@@ -83,9 +84,9 @@ export const SplashContainer = () => {
         <X num="1" />
         <X num="2" />
        
-        <Potion />
+       
         <Circle num="2" />
-      
+        </div>
       
       
     </div>
