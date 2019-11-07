@@ -198,7 +198,7 @@ import UserItemContainer from './onlinelist/user_item_container';
             <ServersContainer />
             <div className="leftbar">
               <div className="leftsearchbarcontainer"><input 
-              className="leftsearchbar" placeholder="Find or start a conversation" type="text" 
+              className="leftsearchbar" placeholder="Find a user to start conversation" type="text" 
               value={this.state.searchInput} onChange={this.update("searchInput")}/>
               <div className="searched-users">
                 <ul>
