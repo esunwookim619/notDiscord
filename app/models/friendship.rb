@@ -10,6 +10,9 @@
 #
 
 class Friendship < ApplicationRecord
+
+  validates_uniqueness_of :self_id, :scope => [:friend_id]
+
   belongs_to :self,
   foreign_key: :self_id,
   class_name: :User
