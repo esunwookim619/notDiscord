@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import Typed from 'typed.js';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -31,27 +32,26 @@ class SessionForm extends React.Component {
   }
 
 
-  typeDemoUser() {
-    let val = "";
-    let val2 = "";
-    let demoemail = this.props.demoUser.email;
-    let password = this.props.demoUser.password;
-    for (let i = 0; i < demoemail.length; i++) {
-      
-        val += demoemail[i];
-        this.setState(function() {
-          return {email: val}
-        }, () => setTimeout(() => {}, 1000));
-   
-    }
-    for (let i = 0; i < password.length; i++) {
-    
-        val2 += password[i];
-        this.setState(function() {
-          return {password: val2}
-        }, () => setTimeout(() => {}, 1000));
-    }
-  
+  typeDemoUser(e) {
+    e.preventDefault();
+    let demoemail = {
+      strings: ["demo@gmail.com"],
+      typeSpeed: 50, };
+    let password = {
+      strings: ["password"],
+      typeSpeed: 50, };
+
+    // this.setState({email: "", password:""});
+
+    new Typed(".demo-email", demoemail );
+
+    setTimeout(() => {
+      new Typed(".demo-password", password);
+    }, 1400);
+
+    setTimeout(() => {
+      this.props.processForm({ email: "demo@gmail.com", password: "password" }).then(() => { this.props.history.push("/channels/@me") }); 
+    }, 2400);
   }
 
   errors(field) {
@@ -121,12 +121,12 @@ class SessionForm extends React.Component {
         <form className={form} onSubmit={this.handleSubmit}>
           {header}
             <label className={this.individualError("Email") + label}>EMAIL <span className="errormessage">{this.errors("Email")}</span></label>
-            <input className={this.individualError("Email") + input} type="email" value={this.state.email} onChange={this.update("email")} />
+            <input className={this.individualError("Email") + input + " " + "demo-email"} type="email" value={this.state.email} onChange={this.update("email")} />
 
             {username}
          
             <label className={this.individualError("Password") + label}>PASSWORD <span className="errormessage">{this.errors("Password")}</span></label>
-            <input className={this.individualError("Password") + input} type="password" value={this.state.password} onChange={this.update("password")} />
+            <input className={this.individualError("Password") + input + " " + "demo-password"} type="password" value={this.state.password} onChange={this.update("password")} />
             <p className="forgot">Forgot your password?</p>
             <input className="inputform" type="submit" value={this.props.formType} />
             <p className="question">{extra} <Link className="switchlink" to={`/${link}`}>{other}</Link></p>
