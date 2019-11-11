@@ -27,11 +27,11 @@ export const SplashContainer = () => {
         
           <div className="nav_left">
           <NotDiscordLogo />
-            <a className="broken" href="https://github.com/esunwookim619?tab=repositories">Github</a>
-            <a className="broken" href="https://www.linkedin.com/in/edward-kim-b47908122">LinkedIn</a>
-            <a className="broken" href="https://www.facebook.com/">Facebook</a>
-            <a className="broken"href="https://behold-aa.herokuapp.com">Behold</a>
-          <a className="broken" href="https://www.instagram.com/">Instagram</a>
+            <a className="broken" target="_blank" href="https://github.com/esunwookim619?tab=repositories">Github</a>
+            <a className="broken" target="_blank" href="https://www.linkedin.com/in/edward-kim-b47908122">LinkedIn</a>
+            <a className="broken" target="_blank" href="https://www.facebook.com/">Facebook</a>
+            <a className="broken" target="_blank" href="https://behold-aa.herokuapp.com">Behold</a>
+            <a className="broken" target="_blank" href="https://www.instagram.com/">Instagram</a>
           </div>
           <div className="nav_right">
             <GreetingContainer />
