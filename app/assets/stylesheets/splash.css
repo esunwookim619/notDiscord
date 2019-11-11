@@ -380,20 +380,20 @@ nav {
    position: absolute;
    left: 37.7%;
    top: 15%; 
-   -webkit-animation: coin-move 1.5s;
-   animation: coin-move 1.5s;
+   -webkit-animation: coin-move 1s;
+   animation: coin-move 1s;
  }
 
  .spinner {
    -webkit-animation-name: spinner;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: .5s;
 
     animation-name: spinner;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    animation-duration: 1s;
+    animation-duration: .5s;
 
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;

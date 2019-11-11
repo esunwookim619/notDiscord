@@ -18,8 +18,7 @@ import X from "./x";
 import Weight from "./weight";
 import Potion from "./potion";
 import NotDiscordLogo from './notdiscordlogo';
-import UIFx from 'uifx';
-// import coinNoise from '../../../app/assets/images/Mario-coin-sound.mp3';
+
 
 class SplashContainer extends React.Component {
   constructor(props) {
@@ -27,7 +26,6 @@ class SplashContainer extends React.Component {
     this.state = {
       coinClass: "invis",
     }
-    // this.noise = new UIFx( {asset: coinNoise});
   }
 
 // export const SplashContainer = () => {
@@ -58,7 +56,7 @@ class SplashContainer extends React.Component {
           <button className="noopen">Just click the Login button</button>
           </div>
         </div>
-      
+        <audio id="coin" src={window.coinnoise} type="audio/mp3"></audio>
         <div className="electronics">
           <div className="aic">
             <Potion />
@@ -82,6 +80,10 @@ class SplashContainer extends React.Component {
         {/* <Mariobox /> */}
         <img onClick={() => {
           this.setState({ coinClass: "coin-ani" });
+          
+          let mp3 = document.getElementById("coin");
+          mp3.play();
+
           setTimeout(() => this.setState({ coinClass: "invis"}), 1500);
           }} className="mariobox" src={window.marioboxURL} />
         <div className={this.state.coinClass}>
@@ -105,6 +107,7 @@ class SplashContainer extends React.Component {
        
        
         <Circle num="2" />
+        
         </div>
       
       

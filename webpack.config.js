@@ -1,5 +1,4 @@
 const path = require('path');
-const SRC = path.resolve(__dirname, "node_modules");
 
 module.exports = {
   context: __dirname,
@@ -22,11 +21,6 @@ module.exports = {
             presets: ["@babel/env", "@babel/react"]
           }
         }
-      },
-      {
-        test: /\.mp3$/,
-        include: SRC,
-        loader: "file-loader"
       }
     ]
   },
