@@ -67,7 +67,8 @@ export const SplashContainer = () => {
         
         <Coin num="1" />
         <Coin num="2"/>
-        <Mariobox />
+        <button ><Mariobox /></button>
+        {/* <img src={window.star}></img> */}
         <Circle num="1" />
 
         <Square num="1"/>
