@@ -18,8 +18,20 @@ import X from "./x";
 import Weight from "./weight";
 import Potion from "./potion";
 import NotDiscordLogo from './notdiscordlogo';
+import UIFx from 'uifx';
+// import coinNoise from '../../../app/assets/images/Mario-coin-sound.mp3';
 
-export const SplashContainer = () => {
+class SplashContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      coinClass: "invis",
+    }
+    // this.noise = new UIFx( {asset: coinNoise});
+  }
+
+// export const SplashContainer = () => {
+  render() {
   return (
     
     <div className="splash">
@@ -67,8 +79,14 @@ export const SplashContainer = () => {
         
         <Coin num="1" />
         <Coin num="2"/>
-        <button ><Mariobox /></button>
-        {/* <img src={window.star}></img> */}
+        {/* <Mariobox /> */}
+        <img onClick={() => {
+          this.setState({ coinClass: "coin-ani" });
+          setTimeout(() => this.setState({ coinClass: "invis"}), 1500);
+          }} className="mariobox" src={window.marioboxURL} />
+        <div className={this.state.coinClass}>
+        <img className="spinner" src={window.coinURL}></img>
+        </div>
         <Circle num="1" />
 
         <Square num="1"/>
@@ -94,5 +112,7 @@ export const SplashContainer = () => {
     </div>
     
   );
+  }
 }
 
+export default SplashContainer
