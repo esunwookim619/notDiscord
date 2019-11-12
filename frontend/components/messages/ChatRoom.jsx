@@ -20,7 +20,6 @@ class ChatRoom extends React.Component {
       { channel: "ChatChannel", currentchannelId: this.props.match.params.channelId },
       {
         received: data => {
-   
           receiveMessage(data);
         },
         speak: function (data) {
@@ -76,6 +75,17 @@ class ChatRoom extends React.Component {
    
   }
 
+  timeFormat(jsonTime) {
+    let datetime = new Date(JSON.parse(`\"` + jsonTime + `\"`));
+    let hours = datetime.getHours();
+    let ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    let minutes = datetime.getMinutes();
+    if (minutes < 10) { minutes = `0${minutes}` }
+    return hours + ":" + minutes + ampm
+  }
+
   render() {
     let messageList;
     let myMsgs = this.myMessages();
@@ -83,10 +93,12 @@ class ChatRoom extends React.Component {
       messageList = myMsgs.map(message => {
         let username;
         let color;
+        let time;
         if (this.findUser(message)[0]) {
           
           username = this.findUser(message)[0].username;
           color = this.findUser(message)[0].avatar_color;
+          time = this.timeFormat(message.created_at);
         }
         // let colors = ["red", "yellow", "green", "grey", "purple"];
         return (
@@ -95,7 +107,7 @@ class ChatRoom extends React.Component {
             <div className="buttonandmessage">
               <button className={`messageavatar ${color}`}><Logo /></button> 
             <div className="usernameandmessage">
-                <div className="usernameinmessage">{username} <div className="createdat">{message.created_at}</div></div>
+                <div className="usernameinmessage">{username} <div className="createdat">{time}</div></div>
               <div className="individualmessage">{message.body}</div>
             </div>
              

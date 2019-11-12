@@ -121,6 +121,17 @@ class DmChat extends React.Component {
     }
   }
 
+  timeFormat(jsonTime) {
+    let datetime = new Date(JSON.parse(`\"` + jsonTime + `\"`));
+    let hours = datetime.getHours();
+    let ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    let minutes = datetime.getMinutes();
+    if (minutes < 10) { minutes = `0${ minutes }` }
+      return hours + ":" + minutes + ampm
+  }
+
   render() {
     let dmList = [];
     let currentdmchannel = [];
@@ -131,8 +142,13 @@ class DmChat extends React.Component {
     if (myDms.length > 0) {
       dmList = myDms.map(dm => {
         let username;
+        let color;
+        let time;
         if (this.findUser(dm)[0]) {
-          username = this.findUser(dm)[0].username
+          username = this.findUser(dm)[0].username;
+          color = this.findUser(dm)[0].avatar_color;
+          time = this.timeFormat(dm.created_at);
+
         }
 
         return (
@@ -141,9 +157,9 @@ class DmChat extends React.Component {
             onMouseEnter={this.MouseHover}
             onMouseLeave={this.MouseHover}>
             <div className="buttonandmessage">
-              <button className="messageavatar"><Logo /></button>
+              <button className={`messageavatar ${color}`}><Logo /></button>
               <div className="usernameandmessage">
-                <div className="usernameinmessage">{username} <div className="createdat">{dm.created_at}</div></div>
+                <div className="usernameinmessage">{username} <div className="createdat">{time}</div></div>
                 <div className="individualmessage">{dm.body}</div>
                 {/* {this.state.isHovering && <img className="deletedmicon"
                   onClick={() => {
