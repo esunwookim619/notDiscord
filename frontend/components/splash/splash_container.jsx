@@ -137,7 +137,7 @@ class SplashContainer extends React.Component {
             < img className="spinner" src={window.coinURL}></img>
           </div>
           <div className={this.state.wumpusClass}>
-            <img src={window.wumpus}></img>
+            <img src={window.smallwumpus}></img>
           </div>
           <div className={this.state.starClass}>
             <img src={window.star}></img>
@@ -158,7 +158,7 @@ class SplashContainer extends React.Component {
             < img className="spinner" src={window.coinURL}></img>
           </div>
           <div className={this.state.wumpusClass2}>
-            <img src={window.wumpus}></img>
+            <img src={window.smallwumpus}></img>
           </div>
           <div className={this.state.starClass2}>
             <img src={window.star}></img>
@@ -167,7 +167,7 @@ class SplashContainer extends React.Component {
             < img className="spinner" src={window.coinURL}></img>
           </div>
           <div className={this.state.wumpusClass3}>
-            <img src={window.wumpus}></img>
+            <img src={window.smallwumpus}></img>
           </div>
           <div className={this.state.starClass3}>
             <img src={window.star}></img>
@@ -176,7 +176,7 @@ class SplashContainer extends React.Component {
             < img className="spinner" src={window.coinURL}></img>
           </div>
           <div className={this.state.wumpusClass4}>
-            <img src={window.wumpus}></img>
+            <img src={window.smallwumpus}></img>
           </div>
           <div className={this.state.starClass4}>
             <img src={window.star}></img>
