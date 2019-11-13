@@ -402,3 +402,9 @@
   left: 9px;
   top: 12px;
 }
+
+.offline-online {
+  position: relative;
+  left: 21px;
+  bottom: 15px;
+}

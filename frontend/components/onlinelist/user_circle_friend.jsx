@@ -20,7 +20,7 @@ class UserCircleFriend extends React.Component {
       status = "Offline";
     }
     return (
-      <div className="onlineindicator2">{color}  {status}</div>
+      <div className="onlineindicator2">{color} <div className="offline-online">{status}</div></div>
     )
   }
 }

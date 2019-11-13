@@ -173,8 +173,8 @@ import UserItemContainer from './onlinelist/user_item_container';
           return (
             <div className="friends-item-ul-li" key={friend.id}>
               <div className={`logobackgroundonline ${friend.avatar_color}`}><Logo num="1" /></div>
-              <FriendItemDefaultContainer user={friend} />
               <UserCircleFriendContainer user={friend} />
+              <FriendItemDefaultContainer user={friend} />
             </div>
           )
         })
