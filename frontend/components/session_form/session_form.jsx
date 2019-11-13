@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
 
     setTimeout(() => {
       this.props.processForm({ email: "demo@gmail.com", password: "password" }).then(() => { this.props.history.push("/channels/@me") }); 
-    }, 2400);
+    }, 2200);
   }
 
   errors(field) {
