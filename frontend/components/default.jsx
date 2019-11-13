@@ -172,7 +172,7 @@ import UserItemContainer from './onlinelist/user_item_container';
         friendsitems = friendsitems.map(friend => {
           return (
             <div className="friends-item-ul-li" key={friend.id}>
-              <div className={`logobackgroundonline ${friend.avatar_color}`}><Logo num="1" /></div>
+              <div className={`logobackgroundonline2 ${friend.avatar_color}`}><Logo num="1" /></div>
               <UserCircleFriendContainer user={friend} />
               <FriendItemDefaultContainer user={friend} />
             </div>
