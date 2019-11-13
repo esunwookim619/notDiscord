@@ -2,7 +2,10 @@ import React from "react";
 import ServersContainer from './servers/servers_container';
 import Wumpus from './wumpus';
 import UserCircleContainer from './onlinelist/user_circle_container';
+import UserCircleFriendContainer from './onlinelist/user_circle_friend_container';
 import FriendItemContainer from './friends/friend_item_container';
+import FriendItemDmContainer from './friends/friend_item_dm_container';
+import FriendItemDefaultContainer from './friends/friend_item_default_container';
 import Logo from './servers/logo';
 import Online from './onlinelist/online';
 
@@ -19,9 +22,12 @@ import UserItemContainer from './onlinelist/user_item_container';
        isHovering: false,
        dmClassName:"avatarandusernamecontainer", 
        searchInput: "",
+       friendsTab: "Online",
      }
      this.MouseHover = this.MouseHover.bind(this);
      this.findSub = this.findSub.bind(this);
+     this.getDmchannelName = this.getDmchannelName.bind(this);
+     this.searchUserByName = this.searchUserByName.bind(this);
    }
 
    toggleHoverState(state) {
@@ -135,26 +141,68 @@ import UserItemContainer from './onlinelist/user_item_container';
     return searchedUsers;
   }
 
+  searchUserByName(name) {
+    let searchedUser = [];
+    if (this.props.users.length > 0) {
+      searchedUser = this.props.users.filter(user => user.username === name)
+    }
+    return searchedUser;
+  }
+
 
    render() {
      let friends = this.getFriends(this.currentUser());
      let friendsitems;
+     let wumpusContainer;
      
      if (friends.length > 0) {
-       friendsitems = friends.map(friend => {
-         return (
-           <div className="avatarandusernamecontainer" key={friend.id}>
-             <div className={`logobackgroundonline ${friend.avatar_color}`}><Logo num="1" /></div>
-             <UserCircleContainer user={friend} />
-             <FriendItemContainer user={friend} />
-           </div>
-         )
-       })
+      if (this.state.friendsTab === "All") {
+        friendsitems = friends.map(friend => {
+          return (
+            <div className="friends-item-ul-li" key={friend.id}>
+              <div className={`logobackgroundonline2 ${friend.avatar_color}`}><Logo num="1" /></div>
+              <UserCircleFriendContainer user={friend} />
+              <FriendItemDefaultContainer user={friend} />
+              
+            </div>
+          )
+        })
+      } else if (this.state.friendsTab === "Online") {
+        friendsitems = friends.filter(friend => friend.online === true);
+        friendsitems = friendsitems.map(friend => {
+          return (
+            <div className="friends-item-ul-li" key={friend.id}>
+              <div className={`logobackgroundonline ${friend.avatar_color}`}><Logo num="1" /></div>
+              <FriendItemDefaultContainer user={friend} />
+              <UserCircleFriendContainer user={friend} />
+            </div>
+          )
+        })
+      }
      }
+   
+     if (friendsitems) {
+       if (friendsitems.length === 0) {
+       wumpusContainer = (
+         <div className="wumpus-container">
+           <Wumpus />
+           <div className="wumpuscaption">No one's around to play with Wumpus...</div>
+         </div>
+       )
+     }
+     }
+     
      let dmchannels = this.getDmchannels();
+     let getDmchannelName = this.getDmchannelName;
+     let searchUserByName = this.searchUserByName;
      let dmchannelsitems;
         if (dmchannels.length > 0) {
           dmchannelsitems = dmchannels.map(dmchannel => {
+            let friend = searchUserByName(getDmchannelName(dmchannel));
+            friend = friend[0];
+            if (friend) {
+
+            
             return (
               <div className={this.state.dmClassName} key={dmchannel.id}
                 onMouseEnter={this.MouseHover}
@@ -162,8 +210,10 @@ import UserItemContainer from './onlinelist/user_item_container';
                 onClick={() => {
                   this.MouseHover();
                   this.props.history.push(`/channels/@me/${dmchannel.id}`)}}>
-                <img className="dmenvelope" src={window.message}></img>
-                <div className="dmpersonname">{this.getDmchannelName(dmchannel)}</div>
+                <div className={`logobackgroundonline ${friend.avatar_color}`}><Logo num="1" /></div>
+                <UserCircleContainer user={friend} />
+                <FriendItemDmContainer user={friend} />
+                {/* <div className="dmpersonname">{this.getDmchannelName(dmchannel)}</div> */}
                 {this.state.isHovering && <img className="deletedirectmessage" 
                 onClick={() => this.props.deleteDmchannel(dmchannel.id)
                   .then(() => this.props.history.push(`/channels/@me`))
@@ -173,7 +223,7 @@ import UserItemContainer from './onlinelist/user_item_container';
                   })}
                 src={window.deletemessage}></img>}
               </div>
-            )
+            )}
           })
         }
       if ( this.props.loading === false ) {
@@ -194,7 +244,15 @@ import UserItemContainer from './onlinelist/user_item_container';
         }
         return (
           <div>
-            <div className="chattopbar" />
+            <div className="chattopbar chattopbar-default">
+              <div className="chattopbar-friends"><svg className="friend-waving-icon" x="0" y="0" aria-hidden="false" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fillRule="evenodd"><path fill="#72767d" fillRule="nonzero" d="M0.5,0 L0.5,1.5 C0.5,5.65 2.71,9.28 6,11.3 L6,16 L21,16 L21,14 C21,11.34 15.67,10 13,10 C13,10 12.83,10 12.75,10 C8,10 4,6 4,1.5 L4,0 L0.5,0 Z M13,0 C10.790861,0 9,1.790861 9,4 C9,6.209139 10.790861,8 13,8 C15.209139,8 17,6.209139 17,4 C17,1.790861 15.209139,0 13,0 Z" transform="translate(2 4)"></path><path d="M0,0 L24,0 L24,24 L0,24 L0,0 Z M0,0 L24,0 L24,24 L0,24 L0,0 Z M0,0 L24,0 L24,24 L0,24 L0,0 Z"></path></g></svg><div className="friends-caption">Friends</div></div>
+              <div className="chattopbar-online" onClick={() => {
+                this.setState({friendsTab: "Online"});
+              }}>Online</div>
+              <div className="chattopbar-all" onClick={() => {
+                this.setState({friendsTab: "All"});
+              }}>All</div>
+            </div> 
             <ServersContainer />
             <div className="leftbar">
               <div className="leftsearchbarcontainer"><input 
@@ -206,13 +264,7 @@ import UserItemContainer from './onlinelist/user_item_container';
                 </ul>
               </div>
               </div>
-              <div className="friendslist">
-                <div className="onlinelistheading">Friends</div>
-                <ul>
-                  {friendsitems}
-                </ul>
-              </div>
-              <div className="friendslist">
+              <div className="dms-list">
                 <div className="onlinelistheading">Direct Messages</div>
                 <ul>
                   {dmchannelsitems}
@@ -227,10 +279,16 @@ import UserItemContainer from './onlinelist/user_item_container';
               </div>
             </div>
             <div className="rightside">
-              <div className="wumpus-container">
-              <Wumpus />
-              <div className="wumpuscaption">Shhhh! Wumpus is sleeping!</div>
+              <div className="friends-item-container">
+                <div className="friends-item-heading-container">
+                <div className="friends-item-default-heading-name">Name</div>
+                <div className="friends-item-default-heading-status">Status</div>
+                </div>
+                <ul className="friends-item-ul">
+                  {friendsitems}
+                </ul>
               </div>
+              {wumpusContainer}
             </div>
           </div>
         )
