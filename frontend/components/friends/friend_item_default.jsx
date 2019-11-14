@@ -29,8 +29,10 @@ class FriendItemDefault extends React.Component {
     }
     return (
       <div
-        onMouseEnter={this.MouseHover}
-        onMouseLeave={this.MouseHover}
+        // onMouseEnter={this.MouseHover}
+        // onMouseLeave={this.MouseHover}
+        onMouseEnter={() => this.setState({ isHovering: true })}
+        onMouseLeave={() => this.setState({ isHovering: false })}
         className="onlinelistusername2"><div className="onlinelistusername2-name">{username}</div>
         {this.state.isHovering && <img
           onClick={() => this.props.deleteFriend(friendId)}

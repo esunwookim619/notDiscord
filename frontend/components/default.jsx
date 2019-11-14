@@ -23,6 +23,8 @@ import UserItemContainer from './onlinelist/user_item_container';
        dmClassName:"avatarandusernamecontainer", 
        searchInput: "",
        friendsTab: "Online",
+       extraClass: "chattopbar-online2",
+       extraClass2: "",
      }
      this.MouseHover = this.MouseHover.bind(this);
      this.findSub = this.findSub.bind(this);
@@ -151,8 +153,9 @@ import UserItemContainer from './onlinelist/user_item_container';
 
 
    render() {
+
      let friends = this.getFriends(this.currentUser());
-     let friendsitems;
+     let friendsitems = [];
      let wumpusContainer;
      
      if (friends.length > 0) {
@@ -181,7 +184,7 @@ import UserItemContainer from './onlinelist/user_item_container';
       }
      }
    
-     if (friendsitems) {
+     
        if (friendsitems.length === 0) {
        wumpusContainer = (
          <div className="wumpus-container">
@@ -190,7 +193,7 @@ import UserItemContainer from './onlinelist/user_item_container';
          </div>
        )
      }
-     }
+     
      
      let dmchannels = this.getDmchannels();
      let getDmchannelName = this.getDmchannelName;
@@ -242,14 +245,19 @@ import UserItemContainer from './onlinelist/user_item_container';
         } else {
           listUsers = null;
         }
+        
         return (
           <div>
             <div className="chattopbar chattopbar-default">
               <div className="chattopbar-friends"><svg className="friend-waving-icon" x="0" y="0" aria-hidden="false" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fillRule="evenodd"><path fill="#72767d" fillRule="nonzero" d="M0.5,0 L0.5,1.5 C0.5,5.65 2.71,9.28 6,11.3 L6,16 L21,16 L21,14 C21,11.34 15.67,10 13,10 C13,10 12.83,10 12.75,10 C8,10 4,6 4,1.5 L4,0 L0.5,0 Z M13,0 C10.790861,0 9,1.790861 9,4 C9,6.209139 10.790861,8 13,8 C15.209139,8 17,6.209139 17,4 C17,1.790861 15.209139,0 13,0 Z" transform="translate(2 4)"></path><path d="M0,0 L24,0 L24,24 L0,24 L0,0 Z M0,0 L24,0 L24,24 L0,24 L0,0 Z M0,0 L24,0 L24,24 L0,24 L0,0 Z"></path></g></svg><div className="friends-caption">Friends</div></div>
-              <div className="chattopbar-online" onClick={() => {
+              <div className={"chattopbar-online" + " " + this.state.extraClass} onClick={() => {
+                this.setState({extraClass: "chattopbar-online2"});
+                this.setState({ extraClass2: "" });
                 this.setState({friendsTab: "Online"});
               }}>Online</div>
-              <div className="chattopbar-all" onClick={() => {
+              <div className={"chattopbar-all" + " " + this.state.extraClass2} onClick={() => {
+                this.setState({ extraClass2: "chattopbar-all2" });
+                this.setState({ extraClass: "" });
                 this.setState({friendsTab: "All"});
               }}>All</div>
             </div> 
