@@ -78,8 +78,10 @@ class ChannelsIndex extends React.Component {
             <div className="channelservernamebox"><div className="channelservername">{currentServer[0].server_name}</div></div>
             <div>
               <div className="textchannels"><span className="chevron">⌄</span> <span className="textchannelstext">TEXT CHANNELS</span> <span className="plus"
-                onMouseEnter={this.MouseHover}
-                onMouseLeave={this.MouseHover}
+                // onMouseEnter={this.MouseHover}
+                // onMouseLeave={this.MouseHover}
+                onMouseEnter={() => this.setState({ isHovering: true })}
+                onMouseLeave={() => this.setState({ isHovering: false })}
                 onClick={() => this.props.openModal('create channel')}>+</span>
                 {this.state.isHovering && <div className="hoveringcreatechannel"><p className="hoveringcreatechanneltext">Create Channel</p></div>}
               </div>
