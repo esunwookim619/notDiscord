@@ -1,40 +1,81 @@
-# README
-
 # notDiscord
 
-notDiscord is a messenging app that uses servers and channels to organize
-chatrooms. Users can add friends, join other people's servers, and more!
+notDiscord is a full stack single page messaging application inspired by 
+Discord. notDiscord was implemented with React and Redux for its frontend and
+Ruby on Rails for its backend. 
 
 ## Link to live site
 
 https://notdiscord-aa.herokuapp.com/#/
 
-## Technologies used
+## Technologies Used
 
-notDiscord is a 1 page app that uses react-redux to implement its frontend. Its
-backend uses Ruby on Rails with PostgreSQL as its database and it is deployed 
-on Heroku server.
+* React / Redux (frontend)
+* Ruby on Rails (backend)
+* PostgreSQL (database)
+* Heroku (server)
 
 ## Features
 
-* Invitations
-  * notDiscord allows users to invite other people to their servers with an 
-  invitation url. To implement this, a custom route pointing to a specific 
-  controller method had to be made. Within the ServersController, I defined
-  a method which would add an entry to a joins table that connected servers with
-  their members. Submitting the join server form with an invitation url would 
-  push the user to a specific container. Upon mounting said container, an
-  AJAX request implementing that method would be fired. Upon completion of the
-  request, the user would be pushed back to the container he was on. This was 
-  done by storing url information before the requests were fired.
+* User Authentication
+
+    Users are required to sign up with a username, email, and password to 
+    access the app's features. A demo user login feature is available for those 
+    who want to try out the site first.
+
+* Servers
+
+    Users have access to different servers. A server can be made by any user 
+    who then becomes its administrator. Only administrators can edit, delete, 
+    or share the server's invitation link, which is available via right click. 
+
+    ![Invitation Link](app/assets/images/invitation_screenshot.png)
+
+    The invitation link, although only initially accessible by the admin, can 
+    be shared with anybody once the admin reveal the information. It is a 
+    unique key of characters unique to each server which allows any user to 
+    join a server when posted into the 'Join Server' modal. This feature was 
+    implemented using custom routes in the backend.
+
+    ![Join Server Modal](app/assets/images/joinserver_modal.png)
+
+* Channels
+
+    Channels within servers contain chatrooms for server members to communicate.
+    Anyone within a server can create new channels. The live-chat feature was 
+    done using Ruby on Rail's Action Cable and Redis to manage web-socket 
+    connections.
+
+* Friends / Direct Messages
+
+    Besides chatting on channels, users can also create private chatrooms for 
+    direct messaging with friends. A search bar on the home page can be used to
+    find other users and add them as friends. After doing so, a user will be 
+    able to see their friends listed and also be able to send them a direct 
+    message. Receivers of a direct message get them in real time.
+
+    ![Friends List](app/assets/images/friendlist.png)
 
 * Online Presence
-  * notDiscord allows users to see if their friends or other server users are
-  online. This uses Action Cable from Ruby on Rails to create channels. Every 
-  time a user logs into notDiscord, they subscribe to the OnlineChannel, which
-  in turn changes their online property to true. After they log off, they are
-  automatically unsubscribed which changes their online  property to false. The
-  online property determines the color of their online indicator circle.
 
+    The online/offline circle along with other features that required real-time
+    information were also done using Ruby on Rail's Action Cable. An online 
+    channel subscribes users as soon as they log in and unsubscribes them when 
+    they log out. Statuses of the user were switched in the backend during 
+    these processes which enabled others to see their online status in real 
+    time. The direct message channel also broadcasted information to this 
+    channel to update the presence of a new message in real time.
+
+    ![Online Channel Code Snippet](app/assets/images/onlinechannel_codesnippet.png)
+
+    "user.inserver" and "user.leaveserver" are built in methods in the backend
+    that switch the online status of the user.
+
+## Future Features
+
+* Update search feature for optimization using SQL queries in the backend
+* Hosting images on AWS to allow more diverse user avatars
+* Implement pending feature for friend requests
+* Create modal for confirmation on deletion of servers and channels
 
 
