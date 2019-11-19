@@ -10,9 +10,9 @@ https://notdiscord-aa.herokuapp.com/#/
 
 ## Technologies Used
 
-* React / Redux (frontend)
-* Ruby on Rails (backend)
-* PostgreSQL (database)
+* React 16.8.6 / Redux 4.0.1 (frontend)
+* Ruby on Rails 5.2.3 (backend)
+* PostgreSQL 2.2.2 (database)
 * Heroku (server)
 
 ## Features
@@ -66,7 +66,27 @@ https://notdiscord-aa.herokuapp.com/#/
     time. The direct message channel also broadcasted information to this 
     channel to update the presence of a new message in real time.
 
-    ![Online Channel Code Snippet](app/assets/images/onlinechannel_codesnippet.png)
+    ```Ruby
+    class OnlineChannel < ApplicationCable::Channel
+        def subscribed
+            stream_for 'online_channel'
+            user = User.find_by(id: params[:currentUserId])
+            user.inserver
+            socket = { id: user.id, email: user.email, username: user.username, 
+            online: user.online }
+            OnlineChannel.broadcast_to('online_channel', socket)
+        end
+
+        def unsubscribed
+            stream_for 'online_channel'
+            user = User.find_by(id: params[:currentUserId])
+            user.leaveserver
+            socket = { id: user.id, email: user.email, username: user.username, 
+            online: user.online }
+            OnlineChannel.broadcast_to('online_channel', socket)
+        end
+    end
+    ```
 
     "user.inserver" and "user.leaveserver" are built in methods in the backend
     that switch the online status of the user.
