@@ -89,7 +89,7 @@ https://notdiscord-aa.herokuapp.com/#/
     ```
 
     "user.inserver" and "user.leaveserver" are built in methods in the backend
-    that switch the online status of the user.
+    that switch the online status of the user.   
 
 ## Future Features
 
