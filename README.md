@@ -97,6 +97,6 @@ https://notdiscord-aa.herokuapp.com/#/
 * Hosting images on AWS to allow more diverse user avatars
 * Implement pending feature for friend requests
 * Create modal for confirmation on deletion of servers and channels
-* Add voice channel
+* Add voice channel  
 
 
