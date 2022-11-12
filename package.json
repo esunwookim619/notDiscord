@@ -17,7 +17,7 @@
     "typed.js": "^2.0.11",
     "uifx": "^2.0.3",
     "webpack": "^4.41.0",
-    "webpack-cli": "^3.3.9"
+    "webpack-cli": "^3.3.12"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
@@ -44,7 +44,7 @@
   "homepage": "https://github.com/esunwookim619/notDiscord#readme",
   "devDependencies": {
     "react-inlinesvg": "^1.1.7",
-    "svg-inline-loader": "^0.8.0"
+    "svg-inline-loader": "^0.8.2"
   },
   "engines": {
     "node": "10.13.0",
