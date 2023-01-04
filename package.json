@@ -44,7 +44,7 @@
   "homepage": "https://github.com/esunwookim619/notDiscord#readme",
   "devDependencies": {
     "react-inlinesvg": "^1.1.7",
-    "svg-inline-loader": "^0.8.0"
+    "svg-inline-loader": "^0.8.2"
   },
   "engines": {
     "node": "10.13.0",
